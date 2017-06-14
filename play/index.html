@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html prefix="
+  dc: http://purl.org/dc/terms/
+  doap: http://usefulinc.com/ns/doap#
+  "
+  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title property="doap:name">RDFa / Play</title>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="codemirror.css" type="text/css" /> 
+    <link rel="stylesheet" href="play.css" type="text/css" /> 
+    <!-- link href="css/bootstrap-responsive.css" rel="stylesheet" -->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">RDFa</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href=".">Play</a></li>
+              <li><a href="../docs/">Documentation</a></li>
+              <li><a href="../tools/">Tools</a></li>
+              <li><a href="../dev/">Developers</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div id="info">
+         <p class="alert alert-warning">
+         WARNING: This is beta software, there are 
+         <a href="https://github.com/rdfa/rdfa-website/issues">bugs</a>. 
+         This tool is not yet ready for production use. That said, it's
+         pretty useful already, and the bugs preventing production use will
+         be sorted out soon.
+         </p>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-disabled">Examples:</button>
+        <button id="btn-person" class="btn">Person</button>
+        <button id="btn-social-network" class="btn">Social Network</button>
+        <button id="btn-event" class="btn">Event</button>
+        <button id="btn-place" class="btn">Place</button>
+        <button id="btn-product" class="btn">Product</button>
+        <button id="btn-svg" class="btn">SVG</button>        
+      </div>
+      
+      <div class="editor">
+        <textarea id="editor">Paste your HTML+RDFa code in here, or click on an example above. 
+A preview of the page will appear to the right with a data visualization below.
+You can also see the raw data by clicking on the "Raw Data" tab.
+
+You can learn more about RDFa by reading the
+<span vocab="http://schema.org/" typeof="TechArticle">
+   <a property="url" href="http://www.w3.org/TR/rdfa-primer/">
+      <span property="name">RDFa 1.1 Primer</span></a>.
+</span>
+</textarea>
+      </div>
+      <iframe id=preview sandbox="allow-same-origin"></iframe>
+    
+      <div id="permalink"></div>
+
+      <div id="markup-errors" class="errors"></div>
+
+      <div id="param-errors" class="errors"></div>
+      
+      <div id="processing-errors" class="errors"></div>
+
+      <div class="tabbable">  
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#viz-tab" data-toggle="tab">Visualization</a></li>
+          <li><a href="#turtle" data-toggle="tab">Raw Data</a></li>
+          <!--li><a href="#ntriples" data-toggle="tab">Raw Data (N-Triples)</a></li-->
+        </ul>
+        
+        <div class="tab-content">  
+          <div class="tab-pane active" id="viz-tab">  
+            <div id="graph"></div>
+          </div>
+          <div class="tab-pane" id="turtle">  
+            <textarea id="turtleOutputDisplay"></textarea>
+          </div>  
+          <!--div class="tab-pane" id="ntriples">  
+            <textarea id="ntriplesOutputDisplay"></textarea>
+          </div-->  
+        </div>
+      </div>
+      
+      <hr>
+
+      <footer>
+        <p>Website content, unless otherwise noted, is released into the public domain.
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap-tab.js"></script>
+    <script type="text/javascript" src="codemirror-compressed.js"></script>
+    <script type="text/javascript" src="codemirror-turtle.js"></script>
+    <script type="text/javascript" src="d3.v2.min.js"></script>
+    <script type="text/javascript" src="RDFa.min.1.1.0.js"></script>
+    <script type="text/javascript" src="play.js"></script>
+    <script type="text/javascript" src="visualization.js"></script>
+    <script type="text/javascript" src="play-examples.js"></script>
+  </body>
+</html>

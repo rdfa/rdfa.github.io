@@ -1,0 +1,74 @@
+/**
+ * Styling for the RDFa Play UI.
+ */
+textarea:focus, input:focus {
+  border: 2px solid #900;
+}
+
+.clear { /* generic container (i.e. div) for floating buttons */
+  overflow: hidden;
+  width: 100%;
+}
+
+.errors {
+  font-style: bold;
+  color: red;
+}
+
+#permalink {
+  text-align: right;
+}
+
+.container {
+  width: 90%;
+}
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.editor .CodeMirror {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: left;
+  width: 50%;
+  border: 1px solid black;
+}
+
+.output .CodeMirror {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: left;
+  width: 100%;
+  border: 1px solid black;
+}
+
+iframe {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 49%;
+  float: left;
+  height: 300px;
+  border: 1px solid black;
+  border-left: 0px;
+}     
+
+/* Visualization styling */
+
+.node circle {
+  cursor: pointer;
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font-size: 11px;
+}
+
+path.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
