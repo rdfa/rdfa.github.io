@@ -22,6 +22,7 @@
   mf:action [ a qt:QueryTest;
     qt:queryForm qt:QueryAsk;
     qt:query <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg/0235.sparql>;
+    qt:queryParam "rdfagraph=processor";
     qt:data <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg/0235.svg>
   ];
   mf:result false .
@@ -33,6 +34,7 @@
   mf:action [ a qt:QueryTest;
     qt:queryForm qt:QueryAsk;
     qt:query <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg/0236.sparql>;
+    qt:queryParam "rdfagraph=processor";
     qt:data <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg/0236.svg>
   ];
   test:specificationReference """7.6 Processor Status""";
@@ -48,6 +50,7 @@
   mf:action [ a qt:QueryTest;
     qt:queryForm qt:QueryAsk;
     qt:query <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg/0237.sparql>;
+    qt:queryParam "rdfagraph=processor";
     qt:data <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg/0237.svg>
   ];
   test:specificationReference """7.6 Processor Status and 7.4.2 General Use of CURIEs in Attributes""";
@@ -63,6 +66,7 @@
   mf:action [ a qt:QueryTest;
     qt:queryForm qt:QueryAsk;
     qt:query <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg/0238.sparql>;
+    qt:queryParam "rdfagraph=processor";
     qt:data <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg/0238.svg>
   ];
   test:specificationReference """7.6 Processor Status and 7.4.3 General Use of Terms in Attributes""";
@@ -78,6 +82,7 @@
   mf:action [ a qt:QueryTest;
     qt:queryForm qt:QueryAsk;
     qt:query <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg/0239.sparql>;
+    qt:queryParam "rdfagraph=processor";
     qt:data <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg/0239.svg>
   ];
   test:specificationReference """7.6 Processor Status and 7.4.2 General Use of CURIEs in Attributes""";

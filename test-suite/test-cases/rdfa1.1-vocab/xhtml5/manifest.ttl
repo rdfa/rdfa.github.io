@@ -26,6 +26,7 @@
   mf:action [ a qt:QueryTest;
     qt:queryForm qt:QueryAsk;
     qt:query <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/xhtml5/0240.sparql>;
+    qt:queryParam "vocab_expansion=true";
     qt:data <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/xhtml5/0240.xhtml>
   ];
   test:specificationReference """10.1.1 RDFa Vocabulary Entailment""";
@@ -41,6 +42,7 @@
   mf:action [ a qt:QueryTest;
     qt:queryForm qt:QueryAsk;
     qt:query <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/xhtml5/0241.sparql>;
+    qt:queryParam "vocab_expansion=true";
     qt:data <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/xhtml5/0241.xhtml>
   ];
   test:specificationReference """10.1.1 RDFa Vocabulary Entailment""";
@@ -56,6 +58,7 @@
   mf:action [ a qt:QueryTest;
     qt:queryForm qt:QueryAsk;
     qt:query <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/xhtml5/0242.sparql>;
+    qt:queryParam "vocab_expansion=true";
     qt:data <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/xhtml5/0242.xhtml>
   ];
   test:specificationReference """10.1.1 RDFa Vocabulary Entailment""";
@@ -71,6 +74,7 @@
   mf:action [ a qt:QueryTest;
     qt:queryForm qt:QueryAsk;
     qt:query <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/xhtml5/0243.sparql>;
+    qt:queryParam "vocab_expansion=true";
     qt:data <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/xhtml5/0243.xhtml>
   ];
   test:specificationReference """10.1.1 RDFa Vocabulary Entailment""";
@@ -86,6 +90,7 @@
   mf:action [ a qt:QueryTest;
     qt:queryForm qt:QueryAsk;
     qt:query <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/xhtml5/0244.sparql>;
+    qt:queryParam "vocab_expansion=true";
     qt:data <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/xhtml5/0244.xhtml>
   ];
   test:specificationReference """10.1.1 RDFa Vocabulary Entailment""";
@@ -101,6 +106,7 @@
   mf:action [ a qt:QueryTest;
     qt:queryForm qt:QueryAsk;
     qt:query <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/xhtml5/0245.sparql>;
+    qt:queryParam "vocab_expansion=true";
     qt:data <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/xhtml5/0245.xhtml>
   ];
   test:specificationReference """10.1.1 RDFa Vocabulary Entailment""";

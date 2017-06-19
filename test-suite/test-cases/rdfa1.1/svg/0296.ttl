@@ -5,8 +5,8 @@
 
 <http://example.com/gregg/#me> a foaf:Person;
    foaf:homepage <http://example.com/gregg/>;
-   foaf:knows <http://example.com/niklas/#me>,
-     <http://example.com/manu/#me>,
+   foaf:knows <http://example.com/manu/#me>,
+     <http://example.com/niklas/#me>,
      <http://example.com/stéphane/#me>,
      <http://example.com/ivan/#me>;
    foaf:name "Gregg" .

@@ -25,18 +25,18 @@ module Core
   end
   module_function :tesc
 
-  def manifest_hash
-    @mh ||= ::JSON.load(File.read(MANIFEST_JSON))
+  def manifest_entries
+    @entries ||= ::JSON.load(File.read(MANIFEST_JSON))['@graph']
   end
-  module_function :manifest_hash
+  module_function :manifest_entries
 
   def versions
-    @versions = manifest_hash['@graph'].map {|e| e['versions']}.flatten.uniq
+    @versions = manifest_entries.map {|e| e['versions']}.flatten.uniq
   end
   module_function :versions
 
   def languages
-    @languages = manifest_hash['@graph'].map {|e| e['hostLanguages']}.flatten.uniq
+    @languages = manifest_entries.map {|e| e['hostLanguages']}.flatten.uniq
   end
   module_function :languages
 
@@ -44,7 +44,7 @@ module Core
   # Return the tests included for a particular version/language
   def tests(version, language)
     return [] if version == 'rdfa1.0' && !%w(html4 xhtml1 svg xml).include?(language)
-    manifest_hash['@graph'].select do |tc|
+    manifest_entries.select do |tc|
       tc['hostLanguages'].include?(language) && tc['versions'].include?(version)
     end.map {|tc| tc['num']}
   end
@@ -73,7 +73,7 @@ module Core
           rdfs:comment "RDFa #{version} tests for #{language}" ;
           mf:entries (
       }.gsub(/^      /, '')
-    manifest_hash['@graph'].each do |tc|
+    manifest_entries.each do |tc|
       next unless tc['hostLanguages'].include?(language) && tc['versions'].include?(version)
       ttl << "      <##{tc['num']}>\n"
       test_ttl << %{
@@ -84,7 +84,9 @@ module Core
           mf:action [ a qt:QueryTest;
             qt:queryForm qt:QueryAsk;
             qt:query <#{get_test_url(version, language, tc['num'], 'sparql')}>;
-            qt:data <#{get_test_url(version, language, tc['num'])}>
+        }.gsub(/^        /, '')
+        test_ttl << %{    qt:queryParam "#{tc['queryParam']}";\n} unless tc['queryParam'].to_s.empty?
+        test_ttl << %{    qt:data <#{get_test_url(version, language, tc['num'])}>
           ];
         }.gsub(/^        /, '')
       test_ttl << %{  test:specificationReference """#{tesc(tc['reference'])}""";\n} unless tc['reference'].empty?
@@ -258,8 +260,15 @@ module Core
     tcpath.sub!(/localhost:\d+/, HOSTNAME) # For local testing
 
     content = get_test_content(version, language, num)
+
+    options = {}
+    entry = manifest_entries.detect {|tc| tc['num'] == num}
+    if entry['queryParam']
+      opt, arg = entry['queryParam'].split('=').map(&:to_sym)
+      options[opt] = arg
+    end
     RDF::Turtle::Writer.buffer do |w|
-      RDF::RDFa::Reader.new(content, base_uri: tcpath, prefixes: w.prefixes) do |r|
+      RDF::RDFa::Reader.new(content, base_uri: tcpath, prefixes: w.prefixes, **options) do |r|
         w << r
       end
     end

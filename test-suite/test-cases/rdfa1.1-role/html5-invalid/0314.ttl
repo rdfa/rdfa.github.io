@@ -20,10 +20,10 @@
 
  [ xhv:role xhv:heading] .
 
+ [ xhv:role xhv:listitem] .
+
+ [ xhv:role xhv:listitem] .
+
+ [ xhv:role xhv:listitem] .
+
  [ xhv:role xhv:heading] .
-
- [ xhv:role xhv:listitem] .
-
- [ xhv:role xhv:listitem] .
-
- [ xhv:role xhv:listitem] .

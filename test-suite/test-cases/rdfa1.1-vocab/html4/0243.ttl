@@ -4,4 +4,6 @@
 
 <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/html4> rdfa:usesVocabulary rdfatest: .
 
- [ a rdfatest:SubClass] .
+ [ a rdfatest:EqClass,
+       rdfatest:SubClass,
+       rdfatest:BaseClass] .

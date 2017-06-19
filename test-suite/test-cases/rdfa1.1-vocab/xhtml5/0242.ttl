@@ -2,4 +2,5 @@
 @prefix rdfatest: <http://rdfa.info/vocabs/rdfa-test#> .
 
 <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/xhtml5> rdfatest:baseProp rdfatest:eqProp;
+   rdfatest:eqProp rdfatest:eqProp;
    rdfa:usesVocabulary rdfatest: .
