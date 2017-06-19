@@ -1,0 +1,12 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix rdfatest: <http://rdfa.info/vocabs/rdfa-test#> .
+@prefix xhv: <http://www.w3.org/1999/xhtml/vocab#> .
+
+<http://rdfa.info/test-suite/test-cases/rdfa1.0/html4> cc:attributionURL <http://rdfa.info/>;
+   rdfatest:cornerCase1 <http://rdfa.info/test-suite/test-cases/rdfa1.0/>;
+   rdfatest:cornerCase3 <http://rdfa.info/test-suite/test-cases/rdfa1.0/...>;
+   rdfatest:cornerCase4 <http://rdfa.info/test-suite/test-cases/rdfa1.0/html4?foo=bar../baz>;
+   rdfatest:cornerCase5 <http://rdfa.info/test-suite/.../.htaccess>;
+   xhv:index <http://rdfa.info/#>;
+   xhv:next <http://rdfa.info/test-suite/test-cases/rdfa1.0/0115.html>;
+   xhv:up <http://rdfa.info/test-suite/test-cases/rdfa1.0/> .
