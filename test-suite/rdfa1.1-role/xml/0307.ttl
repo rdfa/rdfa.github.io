@@ -1,3 +1,0 @@
-@prefix xhv: <http://www.w3.org/1999/xhtml/vocab#> .
-
- [ xhv:role xhv:heading] .

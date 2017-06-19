@@ -1,3 +1,0 @@
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-
-<http://www.example.org/faq> dc:title "Example FAQ" .

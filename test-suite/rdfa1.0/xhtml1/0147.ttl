@@ -1,3 +1,0 @@
-@prefix xmlzzz: <http://example.org/> .
-
-<http://rdfa.info/test-suite/test-cases/rdfa1.0/xhtml1> xmlzzz:test "Test" .

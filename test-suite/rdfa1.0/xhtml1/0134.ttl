@@ -1,2 +1,0 @@
-
-<http://rdfa.info/test-suite/test-cases/rdfa1.0/xhtml1> <http://www.w3.org/1999/xhtml/vocab#license> <http://example.org/test.css> .

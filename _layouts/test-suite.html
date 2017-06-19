@@ -1,16 +1,9 @@
 <!DOCTYPE html>
-<html
-  prefix="
-    xhv: http://www.w3.org/1999/xhtml/vocab#
-    xsd: http://www.w3.org/2001/XMLSchema#
-    rdfs: http://www.w3.org/2000/01/rdf-schema#
-    dc: http://purl.org/dc/terms/
-    vcard: http://www.w3.org/2006/vcard/ns#
-    v: http://rdf.data-vocabulary.org/#
-    doap: http://usefulinc.com/ns/doap#"
-  lang="en" >
+<html lang="en" >
   <head>
     {% include head.html %}
+    <link rel="stylesheet" type="text/css" href="{{ base_url }}/css/application.css" />
+    
   </head>
 
   <body>
@@ -18,6 +11,26 @@
     {{ content }}
 
     {% include foot.html %}
+    <script type="text/javascript" src="{{base_url}}/javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/underscore-1.3.1.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/backbone-0.9.1.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/bootstrap-2.0.1.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/bootstrap-alert.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/bootstrap-button.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/bootstrap-modal.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/models/test-model.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/models/version-model.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/views/details-view.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/views/earl-view.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/views/host-language-view.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/views/processor-view.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/views/progress-view.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/views/run-all-view.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/views/source-view.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/views/test-view.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/views/version-view.js"></script>
+    <script type="text/javascript" src="{{base_url}}/javascripts/application.js"></script>
   </body>
 
 </html>

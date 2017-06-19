@@ -1,3 +1,0 @@
-ASK WHERE {
-    <http://rdfa.info/test-suite/test-cases/rdfa1.1-role/xml/0305.xml#heading1> <http://www.w3.org/1999/xhtml/vocab#role> <http://www.w3.org/1999/xhtml/vocab#heading> .
-}

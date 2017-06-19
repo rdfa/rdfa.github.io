@@ -1,3 +1,0 @@
-@prefix ex: <http://example.org/terms#> .
-
-<http://example.org/> ex:prop "A plain literal with a lang tag."@en .

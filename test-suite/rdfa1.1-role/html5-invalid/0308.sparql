@@ -1,3 +1,0 @@
-ASK WHERE {
-    <http://rdfa.info/test-suite/test-cases/rdfa1.1-role/html5-invalid/0308.html#therole> <http://www.w3.org/1999/xhtml/vocab#role> <http://www.example.com/roles/somerole>
-}
