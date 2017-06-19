@@ -13,6 +13,7 @@ gist:
   noscript: false
 exclude:
   - README.md
+  - CNAME
   - Gemfile
   - Gemfile.lock
   - Rakefile
