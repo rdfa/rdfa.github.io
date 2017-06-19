@@ -26,7 +26,7 @@ title: "RDFa / Test Suite"
       <div class='btn-group' data-toggle='buttons-radio' id='versions'></div>
     </div>
     <div class='span2'>
-      <button autocomplete='off' class='btn btn-primary' data-loading-text='Running' id='run-all'>Run All Tests</button>
+      <button class='btn btn-primary' data-loading-text='Running' id='run-all'>Run All Tests</button>
     </div>
   </div>
   <div class='row' id='test-progress'>
@@ -38,8 +38,8 @@ title: "RDFa / Test Suite"
     <div class='span2'>
       <div class='test-status'>
         <div>Total: <span class="test-total"></span></div>
-        <div>Passed: <span class="test-passed"></span></div></div>
-        <div>Failed: <span class="test-failed"></span></div></div>
+        <div>Passed: <span class="test-passed"></span></div>
+        <div>Failed: <span class="test-failed"></span></div>
         <div class='btn-group' id='earl'>
           <a class='btn btn-primary show' href='#'>EARL Report</a>
           <a class='btn btn-primary dropdown-toggle' data-toggle='dropdown' href='#'><span class="caret"></span></a>
@@ -64,6 +64,7 @@ title: "RDFa / Test Suite"
       <li>You can execute every unit test by clicking on the <button class='btn btn-primary'>Run All Tests</button> button.</li>
       <li>After running all tests, you can generate an <a href="">EARL Report</a> using the <button class='btn btn-primary'>EARL Report</button> button.</li>
     </ul>
+    <p>So that the test suite can access the processor to request resources, please be sure to add <code>Access-Control-Allow-Origin: *</code> to returned HTTP headers.</p>
   </div>
   <div class='row'>
     <h2>
@@ -97,15 +98,15 @@ title: "RDFa / Test Suite"
       <div class='span12'>
         <div class='row'>
           <div class='span1'>
-            <button autocomplete='off' class='btn btn-primary test' data-loading-text='Running'>Test</button>
+            <button class='btn btn-primary test' data-loading-text='Running'>Test</button>
           </div>
           <div class='span8'>
             <span class='test-num'>Test <%= num %>:</span>
             <span class='description'><%= description %> <%= negativeTest %></span>
           </div>
           <div class='span3 pull-right'>
-            <button autocomplete='off' class='btn btn-info details' data-complete-text='details' data-loading-text='Loading details ...'>details</button>
-            <button autocomplete='off' class='btn btn-info source' data-complete-text='source' data-loading-text='Loading tests ...'>source</button>
+            <button class='btn btn-info details' data-complete-text='details' data-loading-text='Loading details ...'>details</button>
+            <button class='btn btn-info source' data-complete-text='source' data-loading-text='Loading tests ...'>source</button>
           </div>
         </div>
       </div>

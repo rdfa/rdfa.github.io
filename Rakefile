@@ -20,8 +20,8 @@ namespace :test do
     %w(rdfa1.1 rdfa1.1-proc rdfa1.1-role rdfa1.1-vocab rdfa1.0).each do |version|
       %w(html4 html5 html5-invalid xhtml1 xhtml5 xhtml5-invalid svg xml).each do |language|
         next if Core.tests(version, language).empty?
-        FileUtils.mkdir_p("test-suite/#{version}/#{language}")
-        File.open("test-suite/#{version}/#{language}/manifest.ttl", "w") do |f|
+        FileUtils.mkdir_p("test-suite/test-cases/#{version}/#{language}")
+        File.open("test-suite/test-cases/#{version}/#{language}/manifest.ttl", "w") do |f|
           f.write Core.manifest_ttl(version, language)
         end
       end
@@ -40,8 +40,8 @@ namespace :test do
         end
 
         Core.tests(version, language).each do |num|
-          FileUtils.mkdir_p("test-suite/#{version}/#{language}")
-          File.open("test-suite/#{version}/#{language}/#{num}.#{suffix}", "w") do |f|
+          FileUtils.mkdir_p("test-suite/test-cases/#{version}/#{language}")
+          File.open("test-suite/test-cases/#{version}/#{language}/#{num}.#{suffix}", "w") do |f|
             f.write Core.get_test_content(version, language, num)
           end
         end
@@ -55,8 +55,8 @@ namespace :test do
       %w(html4 html5 html5-invalid xhtml1 xhtml5 xhtml5-invalid svg xml).each do |language|
 
         Core.tests(version, language).each do |num|
-          FileUtils.mkdir_p("test-suite/#{version}/#{language}")
-          File.open("test-suite/#{version}/#{language}/#{num}.sparql", "w") do |f|
+          FileUtils.mkdir_p("test-suite/test-cases/#{version}/#{language}")
+          File.open("test-suite/test-cases/#{version}/#{language}/#{num}.sparql", "w") do |f|
             f.write Core.get_test_content(version, language, num, 'sparql')
           end
         end
@@ -70,8 +70,8 @@ namespace :test do
       %w(html4 html5 html5-invalid xhtml1 xhtml5 xhtml5-invalid svg xml).each do |language|
 
         Core.tests(version, language).each do |num|
-          FileUtils.mkdir_p("test-suite/#{version}/#{language}")
-          File.open("test-suite/#{version}/#{language}/#{num}.ttl", "w") do |f|
+          FileUtils.mkdir_p("test-suite/test-cases/#{version}/#{language}")
+          File.open("test-suite/test-cases/#{version}/#{language}/#{num}.ttl", "w") do |f|
             f.write Core.get_test_result(version, language, num)
           end
         end

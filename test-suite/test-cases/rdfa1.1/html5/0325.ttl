@@ -1,0 +1,11 @@
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/> rdfa:usesVocabulary schema: .
+
+<http://example.org/#bar> schema:refers-to _:g70355617046080 .
+
+<http://example.org/#foo> schema:refers-to _:g70355617046080 .
+
+_:g70355617046080 schema:name "Amanda" .
