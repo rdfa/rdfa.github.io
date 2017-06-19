@@ -2,12 +2,31 @@
 window.Test = Backbone.Model.extend({
   // Calls back with retrieved source
   source: function (cb) {
-    var that = this;
+    var entries = [];
+    var hostLanguages = this.get('hostLanguages');
+    var versions = this.get('versions')
+    var num = this.get('num')
 
-    // Retrieve results from processor and canonical representation
-    var source_url = "test-cases/" + that.get('num');
-    
-    $.getJSON(source_url, cb);
+    versions.forEach(function (version) {
+      hostLanguages.forEach(function (lang) {
+        var suffix = {
+          xhtml1: "xhtml",
+          xhtml5: "xhtml",
+          html4:  "html",
+          html5:  "html",
+          svg:    "svg",
+          xml:    "xml"
+        }[lang];
+        // RDFa 1.0 not defined for HTML5
+        if (version !== 'rdfa1.0' || !['html5', 'xhtml5'].includes(lang)) {
+          entries.push({
+            num: num,
+            doc_uri: "test-cases/" + version + "/" + lang + "/" + num + "." + suffix,
+            version_lang: version + '+' + lang});
+        }
+      });
+    });
+    cb(entries);
   },
   
   // Details URL
@@ -93,7 +112,7 @@ window.Test = Backbone.Model.extend({
 window.TestCollection = Backbone.Collection.extend({
   model:  Test,
   
-  url:    'manifest.json',
+  url:    '/data/manifest.jsonld',
   
   initialize:   function(models, options) {
     if (options) {

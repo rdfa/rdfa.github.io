@@ -1,0 +1,39 @@
+{% assign base_url = '' %}
+{% if site.github.is_project_page %}
+  {% unless site.github.pages_hostname contains 'localhost' %}
+    {% assign base_url = '/' | append: site.github.repository_name %}
+  {% endunless %}
+{% endif %}
+<title property="doap:name">{{ page.title }}</title>
+
+<!-- Meta Tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="description" property="doap:shortdesc" 
+  content="The Resource Description Framework in Attributes" />
+<meta name="author"
+  content="The RDF Web Apps Working Group at W3C" />
+<link rel="doap:homepage" href="http://rdfa.info/" />
+
+<!-- Style Sheets -->
+<link rel="stylesheet" type="text/css" href="{{ base_url }}/css/bootstrap.min.css" />
+
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+  
+  .bs-icon {
+    float: left;
+    margin: 7px 10px 0 0;
+    opacity: .7;
+  }
+  .comma-list span + span:before {
+    content: ", ";
+  }
+</style>
+
+<!-- Script tags -->
+<script type="text/javascript" src="{{base_url}}/javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="{{base_url}}/javascripts/bootstrap.min.js"></script>

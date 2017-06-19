@@ -21,7 +21,7 @@ var SourceView = Backbone.View.extend({
       that.$el.append(
         $('<a class="window"/>')
           .attr('href', tc.doc_uri)
-          .text(tc.suite_version))
+          .text(tc.version_lang))
         .append($('<br/>'));
     });
     return this;

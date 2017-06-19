@@ -1,0 +1,4 @@
+@prefix rdfa: <http://www.example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.example.com> rdfa:erronouslyRedefinedProperty "Foo" .

@@ -11,12 +11,12 @@ var AppRouter = Backbone.Router.extend({
     });
     
     // Load processor definitions
-    $.getJSON("processors.json", function(data) {
+    $.getJSON("/data/processors.json", function(data) {
       that.version.set("processors", data);
     });
 
     // Load version definitions
-    $.getJSON("versionNames.json", function(data) {
+    $.getJSON("/data/versionNames.json", function(data) {
       that.version.set("versionNames", data);
     });
 

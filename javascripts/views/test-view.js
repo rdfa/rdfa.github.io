@@ -52,7 +52,6 @@ var TestItemView = Backbone.View.extend({
   source: function(event) {
     var that = this;
     var button = $(event.target);
-    button.button('loading');
 
     // Retrieve source data and create a vew to display it
     this.model.source(function(data) {
