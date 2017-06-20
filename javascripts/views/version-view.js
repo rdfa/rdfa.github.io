@@ -20,7 +20,7 @@ window.VersionView = Backbone.View.extend({
     _.sortBy(versions, function(key) {
       var sel = key.replace(/[\.\-]/, '_');
       that.$el.append(
-        $("<button class='btn versions' href='#'/>")
+        $("<button class='btn btn-default btn-sm versions' href='#'/>")
           .addClass(sel)
           .attr('data-version', key)
           .attr('data-selector', sel)

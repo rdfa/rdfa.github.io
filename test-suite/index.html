@@ -4,38 +4,34 @@ title: "RDFa / Test Suite"
 ---
 <div class="container">
   <div class='row'>
-    <div class='span6'>
-      <div class='btn-group' data-toggle='buttons-radio' id='host-languages'></div>
+    <div class='col-md-8'>
+      <div class='btn-group' data-toggle='buttons' id='host-languages'></div>
     </div>
-    <div class='span6' id='processor'>
-      <div class='row'>
-        <div class='span2 dropdown'>
-          <button class='btn dropdown-toggle' data-toggle='dropdown'>Processor <b class="caret"></b></button>
+    <div class='col-md-4' id='processor'>
+      <form class="form-inline">
+        <span class='dropdown'>
+          <button type='button' class='btn btn-default btn-sm dropdown-toggle' data-toggle='dropdown' aria-haspopup="true" aria-expanded="false">Processor <b class="caret"></b></button>
           <ul class='processors dropdown-menu'></ul>
-        </div>
-        <div class='span4'>
-          <form>
-            <input class='search-query span4' id='processor-url' placeholder='Processor URL' type='text'/>
-          </form>
-        </div>
-      </div>
+        </span>
+        <input id='processor-url' type='text' class='form-control mb-2 mr-sm-2 mb-sm-0' placeholder='Processor URL'/>
+      </form>
     </div>
   </div>
   <div class='row'>
-    <div class='span10'>
+    <div class='col-md-10'>
       <div class='btn-group' data-toggle='buttons-radio' id='versions'></div>
     </div>
-    <div class='span2'>
-      <button class='btn btn-primary' data-loading-text='Running' id='run-all'>Run All Tests</button>
+    <div class='col-md-2'>
+      <button class='btn btn-primary btn-sm' data-loading-text='Running' id='run-all'>Run All Tests</button>
     </div>
   </div>
   <div class='row' id='test-progress'>
-    <div class='span10'>
+    <div class='col-md-10'>
       <div class='progress progress-success'>
         <div class='bar'></div>
       </div>
     </div>
-    <div class='span2'>
+    <div class='col-md-2'>
       <div class='test-status'>
         <div>Total: <span class="test-total"></span></div>
         <div>Passed: <span class="test-passed"></span></div>
@@ -59,10 +55,10 @@ title: "RDFa / Test Suite"
     <p>The RDFa Test Suite provides an interactive mechanism to check the conformance of an RDFa processor and SPARQL query engine. This service is intended for anybody that wants to see how RDFa works as well as developers that want to do conformance testing on their own RDFa/SPARQL implementations.</p>
     <p>There are several things that you can do on this web page:</p>
     <ul>
-      <li>To run a unit test, click on the <button class='btn btn-primary'>Test</button> link.</li>
-      <li>To see the details of a unit test, click on the <button class='btn btn-info'>details</button> link.</li>
-      <li>You can execute every unit test by clicking on the <button class='btn btn-primary'>Run All Tests</button> button.</li>
-      <li>After running all tests, you can generate an <a href="">EARL Report</a> using the <button class='btn btn-primary'>EARL Report</button> button.</li>
+      <li>To run a unit test, click on the <button class='btn btn-primary btn-sm'>Test</button> link.</li>
+      <li>To see the details of a unit test, click on the <button class='btn btn-info btn-sm'>details</button> link.</li>
+      <li>You can execute every unit test by clicking on the <button class='btn btn-primary btn-sm'>Run All Tests</button> button.</li>
+      <li>After running all tests, you can generate an <a href="">EARL Report</a> using the <button class='btn btn-primary btn-sm'>EARL Report</button> button.</li>
     </ul>
     <p>So that the test suite can access the processor to request resources, please be sure to add <code>Access-Control-Allow-Origin: *</code> to returned HTTP headers.</p>
   </div>
@@ -95,18 +91,18 @@ title: "RDFa / Test Suite"
   <!-- / Bits inside of "<%= %>" are expanded in Javascript context, not Haml -->
   <script id='test-template' type='text/template'>
     <div class='row'>
-      <div class='span12'>
+      <div class='col-md-12'>
         <div class='row'>
-          <div class='span1'>
-            <button class='btn btn-primary test' data-loading-text='Running'>Test</button>
+          <div class='col-md-1'>
+            <button class='btn btn-primary btn-sm test' data-loading-text='Running'>Test</button>
           </div>
-          <div class='span8'>
+          <div class='col-md-8'>
             <span class='test-num'>Test <%= num %>:</span>
             <span class='description'><%= description %> <%= negativeTest %></span>
           </div>
-          <div class='span3 pull-right'>
-            <button class='btn btn-info details' data-complete-text='details' data-loading-text='Loading details ...'>details</button>
-            <button class='btn btn-info source' data-complete-text='source' data-loading-text='Loading tests ...'>source</button>
+          <div class='col-md-3 pull-right'>
+            <button class='btn btn-info btn-sm details' data-complete-text='details' data-loading-text='Loading details ...'>details</button>
+            <button class='btn btn-info btn-sm source' data-complete-text='source' data-loading-text='Loading tests ...'>source</button>
           </div>
         </div>
       </div>

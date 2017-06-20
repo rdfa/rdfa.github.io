@@ -29,54 +29,72 @@ window.Test = Backbone.Model.extend({
     cb(entries);
   },
   
-  // Details URL
-  detailsURL: function() {
-    return "test-details/" +
-      this.get('version') +
+  // Get the URL for the test file
+  testUrl: function () {
+    var suffix = {
+      xhtml1: "xhtml",
+      xhtml5: "xhtml",
+      html4:  "html",
+      html5:  "html",
+      svg:    "svg",
+      xml:    "xml"
+    }[this.get('hostLanguage')];
+
+    // FIXME: Use our base URL.
+    return this.processorURL() + 'http://example.com/test-suite/test-cases' +
+      '/' + this.get('version') +
       '/' + this.get('hostLanguage') +
       '/' + this.get('num') +
-      '?rdfa-extractor=' + escape(this.processorURL());
-  },
-
-  // Get the details for a given test
-  details: function (cb) {
-    // Retrieve results from processor and canonical representation
-    $.ajax({
-      url: this.detailsURL(),
-      dataType: 'json',
-      success: cb,
-      error: function (jqXHR, status) {
-        cb({error: "Request failed: " + jqXHR.statusText + ': ' + jqXHR.responseText});
-      }
-    });
+      '.' + suffix;
   },
   
+  // Get the URL for the SPARQL file
+  sparqlUrl: function () {
+    return '/test-suite/test-cases' +
+      '/' + this.get('version') +
+      '/' + this.get('hostLanguage') +
+      '/' + this.get('num') +
+      '.sparql';
+  },
+  
+  // Get the URL for the result file
+  resultUrl: function () {
+    return '/test-suite/test-cases' +
+      '/' + this.get('version') +
+      '/' + this.get('hostLanguage') +
+      '/' + this.get('num') +
+      '.ttl';
+  },
+
   // Run the test, causes this.result to be set
   run: function () {
     var that = this;
+    var kb = $rdf.graph();
+    var fetch = $rdf.fetcher(kb);
 
     this.set("result", "running");
 
-    // Retrieve results from processor
-    var test_url = "check-test/" +
-      that.get('version') +
-      '/' + that.get('hostLanguage') +
-      '/' + that.get('num') +
-      '?expected-results=' + that.get('expectedResults') +
-      '&rdfa-extractor=' + escape(that.processorURL());
-
-    $.ajax({
-      url: test_url,
-      dataType: 'json',
-      success: function (data) {
-        // Indicate pass/fail and style
-        that.set("result", data.status);
-      },
-      error: function (jqXHR, status) {
+    // Fetch SPARQL
+    $.ajax(that.sparqlUrl())
+      .done(function (sparqlQuery) {
+        // Get result from processor
+        fetch.nowOrWhenFetched(that.testUrl(), undefined, function(ok, body, xhr) {
+          if (ok) {
+            var query = $rdf.SPARQLToQuery(sparqlQuery, true, kb);
+            kb.fetcher = null; // disables resource fetching
+            kb.query(query, function (result) {
+              // Indicate pass/fail and style
+              that.set("result", data.status);
+            });
+          } else {
+            // Indicate fail and style
+            that.set("result", "failed to parse response");
+          }
+        });
+      }).fail(function (xhr, textStatus) {
         // Indicate fail and style
-        that.set("result", status);
-      }
-    });
+        that.set("result", textStatus);
+      });
   },
   
   // Return the selected processor URI
