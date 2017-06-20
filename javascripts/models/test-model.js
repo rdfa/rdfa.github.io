@@ -28,7 +28,14 @@ window.Test = Backbone.Model.extend({
     });
     cb(entries);
   },
-  
+
+  // A URL to the test server
+  url: function (path) {
+    var u = location.protocol + "//" + location.hostname;
+    if (!["80", "443"].includes(location.port)) { u += ":" + location.port};
+    return (u + path);
+  },
+
   // Get the URL for the test file
   testUrl: function () {
     var suffix = {
@@ -41,11 +48,11 @@ window.Test = Backbone.Model.extend({
     }[this.get('hostLanguage')];
 
     // FIXME: Use our base URL.
-    return this.processorURL() + 'http://example.com/test-suite/test-cases' +
+    return this.processorURL() + this.url('/test-suite/test-cases' +
       '/' + this.get('version') +
       '/' + this.get('hostLanguage') +
       '/' + this.get('num') +
-      '.' + suffix;
+      '.' + suffix);
   },
   
   // Get the URL for the SPARQL file
@@ -71,30 +78,51 @@ window.Test = Backbone.Model.extend({
     var that = this;
     var kb = $rdf.graph();
     var fetch = $rdf.fetcher(kb);
+    var sparqlUrl = this.sparqlUrl();
+    var testUrl = this.testUrl();
+    var base = this.testURI();
 
     this.set("result", "running");
 
     // Fetch SPARQL
-    $.ajax(that.sparqlUrl())
-      .done(function (sparqlQuery) {
-        // Get result from processor
-        fetch.nowOrWhenFetched(that.testUrl(), undefined, function(ok, body, xhr) {
-          if (ok) {
-            var query = $rdf.SPARQLToQuery(sparqlQuery, true, kb);
-            kb.fetcher = null; // disables resource fetching
-            kb.query(query, function (result) {
-              // Indicate pass/fail and style
-              that.set("result", data.status);
-            });
-          } else {
-            // Indicate fail and style
-            that.set("result", "failed to parse response");
-          }
-        });
-      }).fail(function (xhr, textStatus) {
+    $.when($.ajax(sparqlUrl), $.ajax(testUrl))
+     .done(function (sparqlRes, testRes) {
+       var sparqlQuery = sparqlRes[0];
+
+      // sparqlRes and testRes are arguments resolved for the ajax requests, respectively.
+      // Each argument is an array with the following structure: [ data, statusText, jqXHR ]
+      // Parse testRes
+      var ct = testRes[2].getResponseHeader("content-type");
+      try {
+        $rdf.parse(testRes[0], kb, base, ct);
+      } catch (parseErr) {
         // Indicate fail and style
-        that.set("result", textStatus);
-      });
+        that.set("result", "error");
+        return;
+      }
+
+      // Parse SPARQL
+      var query = $rdf.SPARQLToQuery(sparqlQuery, true, kb);
+      if (query) {
+        var queryResult = "FAIL";
+        kb.fetcher = null; // disables resource fetching
+        kb.query(query, function (result) {
+          // Result callback
+          // Indicate pass/fail and style
+          queryResult = result ? "PASS" : "FAIL";
+        }, undefined, function (result) {
+          // Done callback
+          console.log("query done");
+          that.set("result", queryResult);
+        });
+      } else {
+        // Indicate fail and style
+        that.set("result", "error");
+      }
+    }).fail(function (xhr, textStatus) {
+      // Indicate fail and style
+      that.set("result", "error");
+    });;
   },
   
   // Return the selected processor URI
@@ -114,7 +142,7 @@ window.Test = Backbone.Model.extend({
 
   // Test URI
   testURI: function() {
-    return "test-cases" +
+    return "http://rdfa.info/test-suite/test-cases" +
     '/' + this.get('version') +
     '/' + this.get('hostLanguage') +
     '/manifest#' + this.get('num');
