@@ -48,13 +48,18 @@ window.Test = Backbone.Model.extend({
     }[this.get('hostLanguage')];
 
     // FIXME: Use our base URL.
-    return this.processorURL() + this.url('/test-suite/test-cases' +
+    return '/test-suite/test-cases' +
       '/' + this.get('version') +
       '/' + this.get('hostLanguage') +
       '/' + this.get('num') +
-      '.' + suffix);
+      '.' + suffix;
   },
-  
+
+  // Get the URL for the extracted RDF from the test file
+  extractedUrl: function () {
+    return this.processorURL() + this.url(this.testUrl());
+  },
+
   // Get the URL for the SPARQL file
   sparqlUrl: function () {
     return '/test-suite/test-cases' +
@@ -64,13 +69,43 @@ window.Test = Backbone.Model.extend({
       '.sparql';
   },
   
-  // Get the URL for the result file
-  resultUrl: function () {
+  // Get the URL for the reference file
+  referenceUrl: function () {
     return '/test-suite/test-cases' +
       '/' + this.get('version') +
       '/' + this.get('hostLanguage') +
       '/' + this.get('num') +
       '.ttl';
+  },
+
+  // Get the details for a given test
+  details: function (cb) {
+    // Retrieve results from processor and canonical representation
+    var testUrl = this.testUrl();
+    var referenceUrl = this.referenceUrl();
+    var extractedUrl = this.extractedUrl();
+    var sparqlUrl = this.sparqlUrl();
+    var res = {
+      num:          this.get('num'),
+      purpose:      this.get('purpose'),
+      docUrl:       testUrl,
+      extractedUrl: extractedUrl,
+      sparqlUrl:    sparqlUrl
+    };
+
+    $.ajax({url: testUrl, dataType: 'text'}).then(function(docText, docStatus) {
+       res.docText = docText;
+       return $.ajax(referenceUrl);
+     }).then(function(referenceText, referenceStatus) {
+       res.referenceText = referenceText;
+       return $.ajax(extractedUrl);
+     }).then(function(extractedText, extractedStatus) {
+       res.extractedText = extractedText;
+       return $.ajax(sparqlUrl);
+     }).then(function(sparqlText, sparqlStatus) {
+       res.sparqlText = sparqlText;
+       cb(res);
+     });
   },
 
   // Run the test, causes this.result to be set
@@ -79,22 +114,23 @@ window.Test = Backbone.Model.extend({
     var kb = $rdf.graph();
     var fetch = $rdf.fetcher(kb);
     var sparqlUrl = this.sparqlUrl();
-    var testUrl = this.testUrl();
+    var extractedUrl = this.extractedUrl();
     var base = this.testURI();
+    var expectedResults = this.get("expectedResults");
 
     this.set("result", "running");
 
     // Fetch SPARQL
-    $.when($.ajax(sparqlUrl), $.ajax(testUrl))
-     .done(function (sparqlRes, testRes) {
+    $.when($.ajax(sparqlUrl), $.ajax(extractedUrl))
+     .done(function (sparqlRes, extractedRes) {
        var sparqlQuery = sparqlRes[0];
 
-      // sparqlRes and testRes are arguments resolved for the ajax requests, respectively.
+      // sparqlRes and extractedRes are arguments resolved for the ajax requests, respectively.
       // Each argument is an array with the following structure: [ data, statusText, jqXHR ]
-      // Parse testRes
-      var ct = testRes[2].getResponseHeader("content-type");
+      // Parse extractedRes
+      var ct = extractedRes[2].getResponseHeader("content-type");
       try {
-        $rdf.parse(testRes[0], kb, base, ct);
+        $rdf.parse(extractedRes[0], kb, base, ct);
       } catch (parseErr) {
         // Indicate fail and style
         that.set("result", "error");
@@ -104,12 +140,12 @@ window.Test = Backbone.Model.extend({
       // Parse SPARQL
       var query = $rdf.SPARQLToQuery(sparqlQuery, true, kb);
       if (query) {
-        var queryResult = "FAIL";
+        var queryResult = expectedResults ? "FAIL" : "PASS";
         kb.fetcher = null; // disables resource fetching
         kb.query(query, function (result) {
           // Result callback
           // Indicate pass/fail and style
-          queryResult = result ? "PASS" : "FAIL";
+          queryResult = result == expectedResults ? "PASS" : "FAIL";
         }, undefined, function (result) {
           // Done callback
           console.log("query done");
@@ -122,7 +158,7 @@ window.Test = Backbone.Model.extend({
     }).fail(function (xhr, textStatus) {
       // Indicate fail and style
       that.set("result", "error");
-    });;
+    });
   },
   
   // Return the selected processor URI

@@ -109,20 +109,22 @@ title: "RDFa / Test Suite"
     </div>
   </script>
   <script id='details-template' type='text/template'>
-    <a class='close' data-dismiss='alert'>x</a>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
     <h3>Purpose</h3>
     <p><%= purpose %></p>
     <h3>Source Document</h3>
-    <pre><div><%- doc_text %></div></pre>
-    <em class='doc_url'>Source <a class='window'><%= doc_url %></a></em>
+    <pre><div class="scrollable-text"><%- docText %></div></pre>
+    <em class='docUrl'>Source <a class='window alert-link'><%= docUrl %></a></em>
     <h3>Turtle (Reference Implementation Triples)</h3>
-    <pre><div><%- ttl_text %></div></pre>
+    <pre><div class="scrollable-text"><%- referenceText %></div></pre>
     <h3>Extracted</h3>
-    <pre><div><%- extracted_text %></div></pre>
-    <em class='extract_url'>Source <a class='window'><%= extract_url %></a></em>
+    <pre><div class="scrollable-text"><%- extractedText %></div></pre>
+    <em class='extractedUrl'>Source <a class='window alert-link'><%= extractedUrl %></a></em>
     <h3>SPARQL Test<%= expected %></h3>
-    <pre><div><%- sparql_text %></div></pre>
-    <em class='sparql_url'>Source <a class='window'><%= sparql_url %></a></em>
+    <pre><div class="scrollable-text"><%- sparqlText %></div></pre>
+    <em class='sparql_url'>Source <a class='windowa lert-link'><%= sparqlUrl %></a></em>
   </script>
   <script id='earl-report-template' type='text/template'><div about='http://rdfa.info/test-suite/' prefix='earl: http://www.w3.org/ns/earl# doap: http://usefulinc.com/ns/doap# rdfatest: http://rdfa.info/vocabs/rdfa-test# mf: http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#' typeof='earl:Software'>
     <h3>
