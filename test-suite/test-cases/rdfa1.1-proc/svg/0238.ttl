@@ -5,189 +5,189 @@
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
+     dcterms:description "";
+     rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
+ ] .
+
+ [
+     a rdfa:Info;
+     dcterms:date "2017-06-21"^^xsd:date;
+     dcterms:description "";
+     rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
+ ] .
+
+ [
+     a rdfa:Info;
+     dcterms:date "2017-06-21"^^xsd:date;
+     dcterms:description "";
+     rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
+ ] .
+
+ [
+     a rdfa:Info;
+     dcterms:date "2017-06-21"^^xsd:date;
+     dcterms:description "[Step 13] skip: reused ec";
+     rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
+ ] .
+
+ [
+     a rdfa:Info;
+     dcterms:date "2017-06-21"^^xsd:date;
+     dcterms:description "";
+     rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
+ ] .
+
+ [
+     a rdfa:Info;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "final count: 104";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "parse_whole_doc: traversal complete'";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "[Step 13] new ec";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "[Step 11] plain literal (inner text)";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:UnresolvedTerm;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "Term undefined_term is not defined";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
-     dcterms:description "";
-     rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
- ] .
-
- [
-     a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
-     dcterms:description "";
-     rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
- ] .
-
- [
-     a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
-     dcterms:description "";
-     rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
- ] .
-
- [
-     a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
-     dcterms:description "";
-     rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
- ] .
-
- [
-     a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
-     dcterms:description "";
-     rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
- ] .
-
- [
-     a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "[Step 13] skip: reused ec";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
+     dcterms:description "";
+     rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
+ ] .
+
+ [
+     a rdfa:Info;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "[Step 13] new ec";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "load_initial_contexts: load <http://www.w3.org/2011/rdfa-context/rdfa-1.1>";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .
 
  [
      a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
+     dcterms:date "2017-06-21"^^xsd:date;
      dcterms:description "version = rdfa1.1,  host_language = svg, library = nokogiri, rdfagraph = [:processor], expand = ";
-     rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
- ] .
-
- [
-     a rdfa:Info;
-     dcterms:date "2017-06-19"^^xsd:date;
-     dcterms:description "[Step 13] skip: reused ec";
      rdfa:context <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/svg>
  ] .

@@ -5,9 +5,9 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://openspring.net/scor#me> a schema:Person,
-     dcterms:Agent,
-     foaf:Person;
+<http://openspring.net/scor#me> a dcterms:Agent,
+     foaf:Person,
+     schema:Person;
    schema:homepage <http://openspring.net/>;
    schema:name "Stéphane Corlosquet" .
 

@@ -14,6 +14,8 @@
 
 <http://rdfa.info/test-suite/test-cases/rdfa1.1-role/html5-invalid#toc> xhv:role xhv:contentinfo .
 
+ [ xhv:role xhv:heading] .
+
  [ xhv:role xhv:note] .
 
  [ xhv:role xhv:heading] .
@@ -25,5 +27,3 @@
  [ xhv:role xhv:listitem] .
 
  [ xhv:role xhv:listitem] .
-
- [ xhv:role xhv:heading] .
