@@ -35,7 +35,7 @@ window.Test = Backbone.Model.extend({
   // A URL to the test server
   url: function (path) {
     var u = location.protocol + "//" + location.hostname;
-    if (!["80", "443"].includes(location.port)) { u += ":" + location.port;}
+    if (!["", "80", "443"].includes(location.port)) { u += ":" + location.port;}
     return (u + path);
   },
 
