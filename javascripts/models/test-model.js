@@ -136,12 +136,18 @@ window.Test = Backbone.Model.extend({
     // Fetch SPARQL
     $.ajax({url: extractedUrl, dataType: 'text'})
      .always(function (extractedText, status, xhr) {
-       var ct = xhr.getResponseHeader("content-type");
+       if (status === "error") {
+         window.console && window.console.log("Error fetching " + extractedUrl);
+         that.set("result", "error");
+         return;
+       }
+       var ct = xhr.getResponseHeader("content-type").split(";")[0];
        if (xhr.status !== 200) {extractedText = "";}
        try {
          $rdf.parse(extractedText, kb, base, ct);
        } catch (parseErr) {
          // Indicate fail and style
+         window.console && window.console.log("Parse error: " + parseErr);
          that.set("result", "error");
          return;
        }
@@ -164,6 +170,7 @@ window.Test = Backbone.Model.extend({
           that.set("result", queryResult);
         }).fail(function (result) {
           // Indicate fail and style
+          window.console && window.console.log("Error fetching " + sparqlUrl);
           that.set("result", "error");
         });
     });
