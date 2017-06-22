@@ -7,6 +7,6 @@
 
  [
      a schema:Person;
-     schema:name "Kellogg",
-       "Gregg"
+     schema:name "Gregg",
+       "Kellogg"
  ] .

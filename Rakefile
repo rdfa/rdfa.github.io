@@ -17,7 +17,7 @@ namespace :test do
 
   desc 'Create manifests'
   task :manifest do
-    %w(rdfa1.1 rdfa1.1-proc rdfa1.1-role rdfa1.1-vocab rdfa1.0).each do |version|
+    %w(rdfa1.1 rdfa1.1-lite rdfa1.1-proc rdfa1.1-role rdfa1.1-vocab rdfa1.0).each do |version|
       %w(html4 html5 html5-invalid xhtml1 xhtml5 xhtml5-invalid svg xml).each do |language|
         next if Core.tests(version, language).empty?
         FileUtils.mkdir_p("test-suite/test-cases/#{version}/#{language}")
@@ -30,7 +30,7 @@ namespace :test do
 
   desc 'Create input files'
   task :input do
-    %w(rdfa1.1 rdfa1.1-proc rdfa1.1-role rdfa1.1-vocab rdfa1.0).each do |version|
+    %w(rdfa1.1 rdfa1.1-lite rdfa1.1-proc rdfa1.1-role rdfa1.1-vocab rdfa1.0).each do |version|
       %w(html4 html5 html5-invalid xhtml1 xhtml5 xhtml5-invalid svg xml).each do |language|
         suffix = case language
         when /xhtml/  then "xhtml"
@@ -51,7 +51,7 @@ namespace :test do
 
   desc 'Create query files'
   task :query do
-    %w(rdfa1.1 rdfa1.1-proc rdfa1.1-role rdfa1.1-vocab rdfa1.0).each do |version|
+    %w(rdfa1.1 rdfa1.1-lite rdfa1.1-proc rdfa1.1-role rdfa1.1-vocab rdfa1.0).each do |version|
       %w(html4 html5 html5-invalid xhtml1 xhtml5 xhtml5-invalid svg xml).each do |language|
 
         Core.tests(version, language).each do |num|
@@ -66,7 +66,7 @@ namespace :test do
 
   desc 'Create result files'
   task :result do
-    %w(rdfa1.1 rdfa1.1-proc rdfa1.1-role rdfa1.1-vocab rdfa1.0).each do |version|
+    %w(rdfa1.1 rdfa1.1-lite rdfa1.1-proc rdfa1.1-role rdfa1.1-vocab rdfa1.0).each do |version|
       %w(html4 html5 html5-invalid xhtml1 xhtml5 xhtml5-invalid svg xml).each do |language|
 
         Core.tests(version, language).each do |num|

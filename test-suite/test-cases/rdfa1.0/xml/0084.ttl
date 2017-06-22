@@ -6,9 +6,8 @@
    foaf:knows <http://www.example.org/#somebody>;
    foaf:name "Dan Brickley" .
 
-<http://www.example.org/#somebody> foaf:knows [
+<http://www.example.org/#somebody> foaf:knows <http://danbri.org/foaf.rdf#danbri>,  [
      foaf:knows <http://www.example.org/#somebody>;
      foaf:mailbox <mailto:ivan@w3.org>;
      foaf:name "Ivan Herman"
-   ],
-     <http://danbri.org/foaf.rdf#danbri> .
+   ] .

@@ -17,7 +17,7 @@ var EarlItemView = Backbone.View.extend({
     this.$el.html(this.template(JSON));
     this.$el.attr("resource", this.model.testURI());
     this.$(".resource.processorURL").attr("resource", JSON.processorURL);
-    this.$(".resource.detailsURL").attr("resource", this.model.detailsURL());
+    //this.$(".resource.detailsURL").attr("resource", this.model.detailsURL());
     this.$(".resource.testURI").attr("resource", this.model.testURI());
     this.$(".resource.outcome").attr("resource", 'earl:' + this.model.get('result').toLowerCase() + 'ed');
     return this;

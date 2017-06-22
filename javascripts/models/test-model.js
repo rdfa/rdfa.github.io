@@ -1,11 +1,12 @@
+/*global Backbone, $, $rdf */
 // Test model, ID is combination of version, hostLanguage and num
 window.Test = Backbone.Model.extend({
   // Calls back with retrieved source
   source: function (cb) {
     var entries = [];
     var hostLanguages = this.get('hostLanguages');
-    var versions = this.get('versions')
-    var num = this.get('num')
+    var versions = this.get('versions');
+    var num = this.get('num');
 
     versions.forEach(function (version) {
       hostLanguages.forEach(function (lang) {
@@ -17,8 +18,10 @@ window.Test = Backbone.Model.extend({
           svg:    "svg",
           xml:    "xml"
         }[lang];
+
+        if (version === 'rdfa1.0' && ['html5', 'xhtml5'].includes(lang)) {
         // RDFa 1.0 not defined for HTML5
-        if (version !== 'rdfa1.0' || !['html5', 'xhtml5'].includes(lang)) {
+        } else {
           entries.push({
             num: num,
             doc_uri: "test-cases/" + version + "/" + lang + "/" + num + "." + suffix,
@@ -28,54 +31,141 @@ window.Test = Backbone.Model.extend({
     });
     cb(entries);
   },
-  
-  // Details URL
-  detailsURL: function() {
-    return "test-details/" +
-      this.get('version') +
+
+  // A URL to the test server
+  url: function (path) {
+    var u = location.protocol + "//" + location.hostname;
+    if (!["80", "443"].includes(location.port)) { u += ":" + location.port;}
+    return (u + path);
+  },
+
+  // Get the URL for the test file
+  testUrl: function () {
+    var suffix = {
+      xhtml1: "xhtml",
+      xhtml5: "xhtml",
+      html4:  "html",
+      html5:  "html",
+      svg:    "svg",
+      xml:    "xml"
+    }[this.get('hostLanguage')];
+
+    // FIXME: Use our base URL.
+    return '/test-suite/test-cases' +
+      '/' + this.get('version') +
       '/' + this.get('hostLanguage') +
       '/' + this.get('num') +
-      '?rdfa-extractor=' + escape(this.processorURL());
+      '.' + suffix;
+  },
+
+  // Get the URL for the extracted RDF from the test file
+  extractedUrl: function () {
+    return this.processorURL() + this.url(this.testUrl());
+  },
+
+  // Get the URL for the SPARQL file
+  sparqlUrl: function () {
+    return '/test-suite/test-cases' +
+      '/' + this.get('version') +
+      '/' + this.get('hostLanguage') +
+      '/' + this.get('num') +
+      '.sparql';
+  },
+  
+  // Get the URL for the reference file
+  referenceUrl: function () {
+    return '/test-suite/test-cases' +
+      '/' + this.get('version') +
+      '/' + this.get('hostLanguage') +
+      '/' + this.get('num') +
+      '.ttl';
   },
 
   // Get the details for a given test
   details: function (cb) {
     // Retrieve results from processor and canonical representation
+    var testUrl = this.testUrl();
+    var referenceUrl = this.referenceUrl();
+    var extractedUrl = this.extractedUrl();
+    var sparqlUrl = this.sparqlUrl();
+    var res = {
+      num:          this.get('num'),
+      purpose:      this.get('purpose'),
+      docUrl:       testUrl,
+      referenceText:"unloaded",
+      docText:      "unloaded",
+      extractedUrl: extractedUrl,
+      extractedText:"unloaded",
+      sparqlUrl:    sparqlUrl,
+      sparqlText:   "unloaded"
+    };
+
     $.ajax({
-      url: this.detailsURL(),
-      dataType: 'json',
-      success: cb,
-      error: function (jqXHR, status) {
-        cb({error: "Request failed: " + jqXHR.statusText + ': ' + jqXHR.responseText});
-      }
+      url: testUrl,
+      dataType: 'text'
+     }).then(function(docText) {
+       res.docText = docText;
+       return $.ajax({url: referenceUrl, dataType: 'text'});
+     }).then(function(referenceText) {
+       res.referenceText = referenceText;
+       return $.ajax({url: sparqlUrl, dataType: 'text'});
+     }).then(function(sparqlText) {
+       res.sparqlText = sparqlText;
+       return $.ajax({url: extractedUrl, dataType: 'text'});
+     }).then(function(extractedText) {
+       res.extractedText = extractedText;
+       cb(res);
+     }).fail(function (xhr) {
+       // Indicate fail and style
+       res.extractedText = "Failed to load: " + xhr.status + ' ' + xhr.statusText;
+       cb(res);
     });
   },
-  
+
   // Run the test, causes this.result to be set
   run: function () {
-    var that = this;
+    var that = this,
+        kb = $rdf.graph(),
+        sparqlUrl = this.sparqlUrl(),
+        extractedUrl = this.extractedUrl(),
+        base = this.testURI(),
+        expectedResults = this.get("expectedResults");
 
     this.set("result", "running");
 
-    // Retrieve results from processor
-    var test_url = "check-test/" +
-      that.get('version') +
-      '/' + that.get('hostLanguage') +
-      '/' + that.get('num') +
-      '?expected-results=' + that.get('expectedResults') +
-      '&rdfa-extractor=' + escape(that.processorURL());
+    // Fetch SPARQL
+    $.ajax({url: extractedUrl, dataType: 'text'})
+     .always(function (extractedText, status, xhr) {
+       var ct = xhr.getResponseHeader("content-type");
+       if (xhr.status !== 200) {extractedText = "";}
+       try {
+         $rdf.parse(extractedText, kb, base, ct);
+       } catch (parseErr) {
+         // Indicate fail and style
+         that.set("result", "error");
+         return;
+       }
 
-    $.ajax({
-      url: test_url,
-      dataType: 'json',
-      success: function (data) {
-        // Indicate pass/fail and style
-        that.set("result", data.status);
-      },
-      error: function (jqXHR, status) {
-        // Indicate fail and style
-        that.set("result", status);
-      }
+       $.ajax({url: sparqlUrl, dataType: 'text'})
+        .then(function(sparqlText) {
+          // Parse SPARQL
+          var query = $rdf.SPARQLToQuery(sparqlText, true, kb);
+          var queryResult = "error";
+          if (query) {
+            queryResult = expectedResults ? "FAIL" : "PASS";
+            kb.fetcher = null; // disables resource fetching
+            kb.query(query, function (result) {
+              // Result callback
+              // Indicate pass/fail and style
+              queryResult = result === expectedResults ? "PASS" : "FAIL";
+            });
+          }
+          // Indicate fail and style
+          that.set("result", queryResult);
+        }).fail(function (result) {
+          // Indicate fail and style
+          that.set("result", "error");
+        });
     });
   },
   
@@ -96,7 +186,7 @@ window.Test = Backbone.Model.extend({
 
   // Test URI
   testURI: function() {
-    return "test-cases" +
+    return "http://rdfa.info/test-suite/test-cases" +
     '/' + this.get('version') +
     '/' + this.get('hostLanguage') +
     '/manifest#' + this.get('num');

@@ -15,7 +15,7 @@ window.HostLanguageView = Backbone.View.extend({
     _.sortBy(this.model.hostLanguages(), function(hl) {
       var sel = hl.toLowerCase();
       that.$el.append(
-        $("<button class='btn suite' href='#'/>")
+        $("<button type='button' class='btn btn-default btn-sm suite' data-toggle='button' aria-pressed='false' autocomplete='off'/>")
           .addClass(sel)
           .attr('data-suite', sel)
           .text(hl)

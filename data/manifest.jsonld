@@ -3421,7 +3421,7 @@
       "classification": "http://www.w3.org/2006/03/test-description#required",
       "description": "rdfagraph='processor' with a markup error generates rdfa:Error",
       "input": "http://tests-suite.rdfa.info/test-cases/0236.html",
-      "purpose": "Setting rdfagraph query parameter to 'processor' generates an rdf:Error",
+      "purpose": "Setting rdfagraph query parameter to 'processor' generates an rdfa:Error",
       "queryParam": "rdfagraph=processor",
       "reference": "7.6 Processor Status",
       "results": "http://tests-suite.rdfa.info/test-cases/0236.sparql",

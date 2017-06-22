@@ -2,8 +2,8 @@
 
 <http://www.example.org/#ben> foaf:knows [
      a foaf:Person;
-     foaf:name "Mark Birbeck"
+     foaf:name "Ivan Herman"
    ],  [
      a foaf:Person;
-     foaf:name "Ivan Herman"
+     foaf:name "Mark Birbeck"
    ] .

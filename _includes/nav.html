@@ -1,21 +1,24 @@
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a class="brand" href="{{ base_url }}/">RDFa</a>
-      <div class="nav-collapse">
-        <ul class="nav">
+      </button>
+      <a class="navbar-brand" href="{{ base_url }}/">RDFa</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
           <li {% if page.nav_index == 1 %}class="active"{% endif %}><a href="{{ base_url }}/play" >Play</a></li>
           <li {% if page.nav_index == 2 %}class="active"{% endif %}><a href="{{ base_url }}/docs">Documentation</a></li>
           <li {% if page.nav_index == 3 %}class="active"{% endif %}><a href="{{ base_url }}/tools">Tools</a></li>
           <li {% if page.nav_index == 4 %}class="active"{% endif %}><a href="{{ base_url }}/dev">Developers</a></li>
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div>
-  </div>
-</div>
+     </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

@@ -9,3 +9,9 @@ div.alert-message span.close {
 body {
   padding-top: 60px;
 }
+
+.scrollable-text {
+  max-height: 300px;
+  overflow: scroll;
+  width: 100%;
+}
