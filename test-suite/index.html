@@ -61,6 +61,8 @@ title: "RDFa / Test Suite"
       <li>After running all tests, you can generate an <a href="">EARL Report</a> using the <button class='btn btn-primary btn-sm'>EARL Report</button> button.</li>
     </ul>
     <p>So that the test suite can access the processor to request resources, please be sure to add <code>Access-Control-Allow-Origin: *</code> to returned HTTP headers.</p>
+    <p class="text-warning">Due to differences in how browsers implement XMLHTTPRequest, some tests may not run properly on browsers other than WebKit or Firefox.</p>
+    <p>See <a href="{{ base_url }}/test-suite/suite-details">this page</a> for more information on the design of the test suite and how to create a processor end-point.</p>
   </div>
   <div class='row'>
     <h2>
