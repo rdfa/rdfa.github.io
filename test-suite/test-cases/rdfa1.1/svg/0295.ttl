@@ -29,9 +29,9 @@
 @prefix xmlzzz: <http://example.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.net/> rdf:value "value two",
+<http://example.net/> rdf:value "value",
      "value one",
-     "value" .
+     "value two" .
 
 xmlzzz: dct:title "Test Case 0121";
    rdf:value "value" .
@@ -46,34 +46,33 @@ xmlzzz:jd google:fn "John Doe" .
 
 <http://internet-apps.blogspot.com/> dct:creator "Mark Birbeck" .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/0067.svg> dct:title "Test 0067" .
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0067.svg> dct:title "Test 0067" .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/0077.svg> xhv:license xmlzzz:license;
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0077.svg> xhv:license xmlzzz:license;
    xhv:role xmlzzz:role .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/faq> dct:title "Example FAQ" .
-
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg> a :Document;
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0295.svg> a :Document;
    dct:title "Test 0109",
      "E = mc2: The Most Urgent Problem of Our Time"^^<ex:XMLLiteral>;
-   cc:license <http://creativecommons.org/licenses/by-nd/3.0/>,
-     <http://creativecommons.org/licenses/by-nc-nd/2.5/>;
-   dct:creator <http://www-sop.inria.fr/acacia/fabien/>,
-     "Ben",
-     <http://www.example.org/#manu>,  [],
-     <http://rdfa.info/test-suite/test-cases/rdfa1.1/jane>,
-     "Mark Birbeck",  [ :name "Ben Adida"],
-     "Fabien Gandon",
-     <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg#me>,
-     <http://www.example.org/#fabien>,
-     "Albert Einstein";
-   dct:publisher <http://www-sop.inria.fr/acacia/fabien/>,
+   cc:license <http://creativecommons.org/licenses/by-nc-nd/2.5/>,
+     <http://creativecommons.org/licenses/by-nd/3.0/>;
+   dct:creator <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/jane>,
+     "Albert Einstein",
+     "Mark Birbeck",
+     <http://www-sop.inria.fr/acacia/fabien/>,  [ :name "Ben Adida"],
+     <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0295.svg#me>,
      <http://www.example.org/#manu>,
-     <http://www.example.org/#fabien>,
+     <http://www.example.org/#fabien>,  [],
+     "Ben",
      "Fabien Gandon";
-   rdf:inlist <http://rdfa.info/test-suite/test-cases/rdfa1.1/res>;
-   rdf:value "Baz",  ("Foo" <http://rdfa.info/test-suite/test-cases/rdfa1.1/foo>),  (<http://rdfa.info/test-suite/test-cases/rdfa1.1/foo>),  ("Foo"),
-     (),  ("Foo" "Bar"),  ("Foo" "Bar"),  ("Foo"),  (<http://rdfa.info/test-suite/test-cases/rdfa1.1/foo> <http://rdfa.info/test-suite/test-cases/rdfa1.1/bar>),  ("Foo");
+   dct:publisher <http://www-sop.inria.fr/acacia/fabien/>,
+     "Fabien Gandon",
+     <http://www.example.org/#manu>,
+     <http://www.example.org/#fabien>;
+   rdf:inlist <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/res>;
+   rdf:value ("Foo" <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/foo>),  (<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/foo> <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/bar>),
+     (),  ("Foo" "Bar"),  (<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/foo>),  ("Foo"),  ("Foo" "Bar"),  ("Foo"),
+     "Baz",  ("Foo");
    xhv:alternate xmlzzz:alternate;
    xhv:appendix xmlzzz:appendix;
    xhv:bookmark xmlzzz:bookmark;
@@ -88,16 +87,17 @@ xmlzzz:jd google:fn "John Doe" .
    xhv:index xmlzzz:index;
    xhv:last xmlzzz:last;
    xhv:license xmlzzz:license,
-     <http://creativecommons.org/licenses/by-nd/3.0/>,
-     <http://creativecommons.org/licenses/by-nc-sa/2.0/>;
+     <http://creativecommons.org/licenses/by-nc-sa/2.0/>,
+     <http://creativecommons.org/licenses/by-nd/3.0/>;
    xhv:meta xmlzzz:meta;
-   xhv:next xmlzzz:next,
-     <http://rdfa.info/test-suite/test-cases/rdfa1.1/0070.svg>,  [ xhv:next <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg#a>,
+   xhv:next [ xhv:next <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0295.svg#a>,
        xmlzzz:node,  [ xhv:next []],
-       <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg#b>];
+       <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0295.svg#b>],
+     <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0070.svg>,
+     xmlzzz:next;
    xhv:p3pv1 xmlzzz:p3pv1;
-   xhv:prev <http://rdfa.info/test-suite/test-cases/rdfa1.1/0069.svg>,
-     xmlzzz:prev;
+   xhv:prev xmlzzz:prev,
+     <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0069.svg>;
    xhv:role xmlzzz:role;
    xhv:section xmlzzz:section;
    xhv:start xmlzzz:start;
@@ -114,27 +114,29 @@ xmlzzz:jd google:fn "John Doe" .
    ];
    :topic "John Doe" .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg#event1> a <cal:Vevent>;
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0295.svg#event1> a <cal:Vevent>;
    <cal:dtend> "2006-10-23"^^xsd:date;
    <cal:dtstart> "2006-10-21"^^xsd:date;
    <cal:location> "Iona, UK";
    <cal:summary> "Weekend off in Iona";
    <cal:url> <http://freetime.example.org/> .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg#interfenestration> <example:size> [
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0295.svg#interfenestration> <example:size> [
      <example:unit> "character";
      rdf:value "17"
    ] .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg#mark> a :Person;
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0295.svg#mark> a :Person;
    :firstName "Mark";
    :name "<span property=\"foaf:firstName\">Mark</span> <span property=\"foaf:surname\">Birbeck</span><span xmlns=\"http://www.w3.org/1999/xhtml\" property=\"foaf:firstName\">Mark</span><span xmlns=\"http://www.w3.org/1999/xhtml\" property=\"foaf:surname\">Birbeck</span>"^^rdf:XMLLiteral;
    :surname "Birbeck" .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg#this> a dct:Agent;
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0295.svg#this> a dct:Agent;
    :name "A particular agent" .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg#wtw> dct:identifier <urn:ISBN:0752820907> .
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0295.svg#wtw> dct:identifier <urn:ISBN:0752820907> .
+
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/faq> dct:title "Example FAQ" .
 
 <http://www.cwi.nl/~steven/> <example:likes> """
     We put thirty spokes together and call it a wheel;
@@ -155,13 +157,14 @@ an XMLLiteral"""^^rdf:XMLLiteral;
 
 ex: dct:title "E = mc2: The Most Urgent Problem of Our Time" .
 
-<http://www.example.org/#article> a :Document,
-     sioc:Post;
+<http://www.example.org/#article> a sioc:Post,
+     :Document;
    <dct:title> "My article" .
 
 <http://www.example.org/#ben> a :Person;
-   :knows <http://www.example.org/#ivan>,
-     <http://www.example.org/#mark>,  [ :name [ a :Person],  [ a :Person]] .
+   :knows [ :name [ a :Person],  [ a :Person]],
+     <http://www.example.org/#ivan>,
+     <http://www.example.org/#mark> .
 
 <http://www.example.org/#matsumoto-kimiko> a :Person;
    :name "松本 后子" .
@@ -182,25 +185,25 @@ whitespace     preserved
 άσπρο   διάστημα
 """@el .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/photo1.jpg> dct:title "Portrait of Mark";
-   dct:creator <http://www.blogger.com/profile/1109404>,
-     "Mark Birbeck" .
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0295.svg#a> dct:title "" .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/res> rdf:value ("Bar"),  ("Bar") .
-
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg#a> dct:title "" .
-
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg#me> xhv:name "Ivan Herman";
-   :name "Ivan Herman",
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0295.svg#me> xhv:name "Ivan Herman";
+   :name "Gregg Kellogg",
      "Ben Adida",
-     "Gregg Kellogg" .
+     "Ivan Herman" .
 
-<http://sw-app.org/img/mic_2006_03.jpg> xhv:alternate <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg#b>;
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/photo1.jpg> dct:title "Portrait of Mark";
+   dct:creator "Mark Birbeck",
+     <http://www.blogger.com/profile/1109404> .
+
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/res> rdf:value ("Bar"),  ("Bar") .
+
+<http://sw-app.org/img/mic_2006_03.jpg> xhv:alternate <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0295.svg#b>;
    :depicts <http://sw-app.org/mic.xhtml#i> .
 
 <http://sw-app.org/mic.xhtml#photo> :depicts <http://sw-app.org/mic.xhtml#i> .
 
-<http://www.blogger.com/profile/1109404> :img <http://rdfa.info/test-suite/test-cases/rdfa1.1/photo1.jpg> .
+<http://www.blogger.com/profile/1109404> :img <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/photo1.jpg> .
 
 <http://www.example.org/#ivan> :name "Ivan Herman" .
 
@@ -218,7 +221,7 @@ whitespace     preserved
    :knows <http://www.example.org/#somebody>;
    :name "Dan Brickley" .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg#b> dct:title """
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0295.svg#b> dct:title """
     
       Test Suite
       Test Case 0115
@@ -636,8 +639,8 @@ an XMLLiteral
   
 
 """,
-     "rdfagraph",
-     "Example Website";
+     "Example Website",
+     "rdfagraph";
    <ex:entity1> ">";
    <ex:entity2> "Ben & Co.";
    <ex:entity3> "@";
@@ -647,10 +650,10 @@ an XMLLiteral
    cc:attributionURL <http://rdfa.info/>;
    xmlzzz:test "Test";
    og: "OG";
-   dct: "DCTERMS",
-     "DC";
-   dct:contributor "Shane McCarron",
-     "Mark Birbeck";
+   dct: "DC",
+     "DCTERMS";
+   dct:contributor "Mark Birbeck",
+     "Shane McCarron";
    dct:language "Ruby";
    gr: "GR";
    rev: "REV";
@@ -659,30 +662,30 @@ an XMLLiteral
    sioc: "SIOC";
    schema: "Schema";
    rdf: "RDF";
-   rdf:value "2012-03-18Z"^^xsd:date,
-     " 2012-03-18Z"^^xsd:dateTime,
+   rdf:value "2012-03"^^xsd:gYearMonth,
+     "not this",
      "2012"^^xsd:gYear,
      "P2011Y06M28DT00H00M00S"^^xsd:duration,
-     "not this",
-     "2012-03-18T00:00:00Z"^^xsd:date,
+     "00:00:00Z"^^xsd:time,
      "2012-03-18T00:00:00Z"^^xsd:dateTime,
+     " 2012-03-18Z"^^xsd:dateTime,
      "2012-03-18T00:00:00-08:00"^^xsd:dateTime,
      "veni, vidi, vici",
-     "2012-03"^^xsd:gYearMonth,
+     "2012-03-18T00:00:00Z"^^xsd:date,
      " 2012-03-18Z",
-     "00:00:00Z"^^xsd:time,
-     "",
-     "D-Day"@en;
+     "2012-03-18Z"^^xsd:date,
+     "D-Day"@en,
+     "";
    xhv: "XHV";
-   xhv:index <http://rdfa.info/#>;
+   xhv:index <http://rdfa.info/test-suite/#>;
    xhv:license xmlzzz:license,
-     "license",
      <http://creativecommons.org/licenses/by-nc-sa/2.0/>,
-     "License";
-   xhv:next <http://rdfa.info/test-suite/test-cases/rdfa1.1/0115.svg>;
-   xhv:role xmlzzz:role,
-     "Role";
-   xhv:up <http://rdfa.info/test-suite/test-cases/rdfa1.1/>;
+     "License",
+     "license";
+   xhv:next <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0115.svg>;
+   xhv:role "Role",
+     xmlzzz:role;
+   xhv:up <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/>;
    rdfs: "RDFS";
    xsd: "XSD";
    owl: "OWL";
@@ -702,15 +705,16 @@ an XMLLiteral
    rdfa: "RDFa";
    : "FOAF";
    :img <http://sw-app.org/img/mic_2007_01.jpg>;
-   :maker <http://www.example.org/#me>,  [
+   :maker [
      a :Person;
      :name "John Doe"
-   ];
-   <rdfatest:cornerCase1> <http://rdfa.info/test-suite/test-cases/rdfa1.1/>;
+   ],
+     <http://www.example.org/#me>;
+   <rdfatest:cornerCase1> <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/>;
    <rdfatest:cornerCase2> <http://example.org/foo/..>;
-   <rdfatest:cornerCase3> <http://rdfa.info/test-suite/test-cases/rdfa1.1/...>;
-   <rdfatest:cornerCase4> <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg?foo=bar../baz>;
-   <rdfatest:cornerCase5> <http://rdfa.info/test-suite/.../.htaccess> .
+   <rdfatest:cornerCase3> <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/...>;
+   <rdfatest:cornerCase4> <http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/0295.svg?foo=bar../baz>;
+   <rdfatest:cornerCase5> <http://rdfa.info/test-suite/test-cases/.../.htaccess> .
 
 <http://www.example.org/#fabien> :name "Fabien Gandon" .
 
@@ -721,37 +725,37 @@ an XMLLiteral
    :knows [ :name "John Doe"];
    :name "John Doe" .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/foo> rdf:value ("Bar"),  ("Foo") .
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/svg/foo> rdf:value ("Foo"),  ("Bar") .
 
 <http://sw-app.org/img/mic_2007_01.jpg> :depicts <http://sw-app.org/mic.xhtml#i> .
 
-<http://sw-app.org/mic.xhtml#i> :img <http://sw-app.org/img/mic_2006_03.jpg>,
-     <http://sw-app.org/mic.xhtml#photo>,
-     <http://sw-app.org/img/mic_2007_01.jpg> .
+<http://sw-app.org/mic.xhtml#i> :img <http://sw-app.org/mic.xhtml#photo>,
+     <http://sw-app.org/img/mic_2007_01.jpg>,
+     <http://sw-app.org/img/mic_2006_03.jpg> .
 
 <http://www.example.org/#somebody> :knows [
+     :knows <http://www.example.org/#somebody>;
+     :mailbox <mailto:ivan@w3.org>;
+     :name "Ivan Herman",  [ a :Person]
+   ],
+     <http://www.w3.org/People/Berners-Lee/card#i>,  [
      a :Person;
      :name "Dan Brickley"
    ],
+     <http://www.ivan-herman.org/Ivan_Herman>,  [ :knows <http://www.w3.org/People/Berners-Lee/card#i>,
+       <http://www.ivan-herman.org/Ivan_Herman>,
+       <http://danbri.org/foaf.rdf#danbri>],  [
+     :knows <http://www.example.org/#somebody>;
+     :mailbox <mailto:ivan@w3.org>;
+     :name "Ivan Herman"
+   ],  [
+     :mailbox <mailto:ivan@w3.org>;
+     :name "Ivan Herman",  [ a :Person]
+   ],
      <http://danbri.org/foaf.rdf#danbri>,  [
      :mailbox <mailto:ivan@w3.org>;
-     :name "Ivan Herman",  [ a :Person]
-   ],  [
-     :knows <http://www.example.org/#somebody>;
-     :mailbox <mailto:ivan@w3.org>;
      :name "Ivan Herman"
-   ],  [
-     :knows <http://www.example.org/#somebody>;
-     :mailbox <mailto:ivan@w3.org>;
-     :name "Ivan Herman",  [ a :Person]
-   ],  [
-     :mailbox <mailto:ivan@w3.org>;
-     :name "Ivan Herman"
-   ],  [ :knows <http://danbri.org/foaf.rdf#danbri>,
-       <http://www.ivan-herman.org/Ivan_Herman>,
-       <http://www.w3.org/People/Berners-Lee/card#i>],
-     <http://www.ivan-herman.org/Ivan_Herman>,
-     <http://www.w3.org/People/Berners-Lee/card#i> .
+   ] .
 
  [
      :knows [ :name "Ralph Swick"];
@@ -776,10 +780,11 @@ an XMLLiteral
  ] .
 
 _:gregg :knows [
-     :knows _:gregg,  [
+     :knows [
        :knows <http://digitalbazaar.com/people/manu>;
        :mbox <mailto:michael.hausenblas@joanneum.at>
-     ];
+     ],
+       _:gregg;
      :mbox <mailto:manu.sporny@digitalbazaar.com>
    ];
    :mbox <mailto:gregg@kellogg-assoc.com>;

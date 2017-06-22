@@ -8,4 +8,4 @@
 <http://greggkellogg.net/#me> schema:name "Gregg Kellogg";
    foaf:homepage <http://greggkellogg.net/> .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/xhtml5> rdfa:usesVocabulary schema: .
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/xhtml5/0334.xhtml> rdfa:usesVocabulary schema: .

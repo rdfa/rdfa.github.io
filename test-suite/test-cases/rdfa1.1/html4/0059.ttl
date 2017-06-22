@@ -2,7 +2,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/html4> dc11:creator <http://www.example.org/#manu>,
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/html4/0059.html> dc11:creator <http://www.example.org/#manu>,
      <http://www.example.org/#fabien>;
    dc11:publisher <http://www.example.org/#manu>,
      <http://www.example.org/#fabien> .

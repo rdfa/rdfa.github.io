@@ -4,6 +4,6 @@
 @prefix sioc: <http://rdfs.org/sioc/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://www.example.org/#article> a foaf:Document,
-     sioc:Post;
+<http://www.example.org/#article> a sioc:Post,
+     foaf:Document;
    dct:title "My article" .

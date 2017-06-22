@@ -11,4 +11,4 @@
    schema:homepage <http://openspring.net/>;
    schema:name "Stéphane Corlosquet" .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/xhtml1> rdfa:usesVocabulary schema: .
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/xhtml1/0302.xhtml> rdfa:usesVocabulary schema: .

@@ -3,4 +3,4 @@
 
 <http://example.org/> dc11:title "Test Case 0121" .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.0/xml> dc11:contributor "Shane McCarron" .
+<http://rdfa.info/test-suite/test-cases/rdfa1.0/xml/0121.xml> dc11:contributor "Shane McCarron" .

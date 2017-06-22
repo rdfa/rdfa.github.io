@@ -1,4 +1,4 @@
 @prefix xhv: <http://www.w3.org/1999/xhtml/vocab#> .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/0077.xhtml> xhv:license <http://example.org/license>;
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/xhtml1/0077.xhtml> xhv:license <http://example.org/license>;
    xhv:role <http://example.org/role> .

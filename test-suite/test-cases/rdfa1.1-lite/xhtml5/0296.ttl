@@ -5,13 +5,13 @@
 
 <http://example.com/gregg/#me> a foaf:Person;
    foaf:homepage <http://example.com/gregg/>;
-   foaf:knows <http://example.com/manu/#me>,
-     <http://example.com/niklas/#me>,
-     <http://example.com/stéphane/#me>,
-     <http://example.com/ivan/#me>;
+   foaf:knows <http://example.com/niklas/#me>,
+     <http://example.com/ivan/#me>,
+     <http://example.com/manu/#me>,
+     <http://example.com/stéphane/#me>;
    foaf:name "Gregg" .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1-lite/xhtml5> rdfa:usesVocabulary foaf: .
+<http://rdfa.info/test-suite/test-cases/rdfa1.1-lite/xhtml5/0296.xhtml> rdfa:usesVocabulary foaf: .
 
 <http://example.com/ivan/#me> a foaf:Person;
    foaf:homepage <http://example.com/ivan/>;

@@ -2,6 +2,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/html5> po:role [ rdfs:label <http://example.org/profiles/director.html>] .
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/html5/0316.html> po:role [ rdfs:label <http://example.org/profiles/director.html>] .
 
 <http://example.org/profiles/director.html> a po:Role .

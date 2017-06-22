@@ -7,4 +7,4 @@
    schema:uri <http://example.orb/val1>;
    foaf:homepage <http://greggkellogg.net/> .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/xhtml5-invalid> rdfa:usesVocabulary schema: .
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/xhtml5-invalid/0303.xhtml> rdfa:usesVocabulary schema: .

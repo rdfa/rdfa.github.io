@@ -1,5 +1,5 @@
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.0/0077.xhtml> <http://www.w3.org/1999/xhtml/vocab#alternate> <http://example.org/alternate>;
+<http://rdfa.info/test-suite/test-cases/rdfa1.0/xhtml1/0077.xhtml> <http://www.w3.org/1999/xhtml/vocab#alternate> <http://example.org/alternate>;
    <http://www.w3.org/1999/xhtml/vocab#appendix> <http://example.org/appendix>;
    <http://www.w3.org/1999/xhtml/vocab#bookmark> <http://example.org/bookmark>;
    <http://www.w3.org/1999/xhtml/vocab#chapter> <http://example.org/chapter>;

@@ -4,6 +4,5 @@
 
 <http://www.example.org/#somebody> foaf:knows [
      foaf:mailbox <mailto:ivan@w3.org>;
-     foaf:name [ a foaf:Person],
-       "Ivan Herman"
+     foaf:name "Ivan Herman",  [ a foaf:Person]
    ] .

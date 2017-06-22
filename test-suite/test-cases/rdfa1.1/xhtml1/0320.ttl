@@ -7,4 +7,4 @@
    foaf:homepage <http://example.com/gregg/>;
    foaf:name "Gregg" .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/xhtml1> rdfa:usesVocabulary foaf: .
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/xhtml1/0320.xhtml> rdfa:usesVocabulary foaf: .

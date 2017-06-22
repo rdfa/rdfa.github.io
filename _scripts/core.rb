@@ -252,7 +252,7 @@ module Core
     when /svg/    then "svg"
     else               "xml"
     end
-    tcpath = url("/test-suite/test-cases/#{version}/#{language}") rescue "http://rdfa.info/test-suite/test-cases/#{version}/#{language}/#{num}.#{suffix}"
+    tcpath = url("/test-suite/test-cases/#{version}/#{language}/#{num}.#{suffix}")
     tcpath.sub!(/localhost:\d+/, HOSTNAME) # For local testing
 
     content = get_test_content(version, language, num)
