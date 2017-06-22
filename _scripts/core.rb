@@ -66,8 +66,8 @@ module Core
       @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
       @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
       @prefix mf: <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#> .
-      @prefix qt: <http://www.w3.org/2001/sw/DataAccess/tests/test-query#> .
       @prefix test: <http://www.w3.org/2006/03/test-description#> .
+      @prefix rdfatest: <http://rdfa.info/vocabs/rdfa-test#> .
 
       <>  rdf:type mf:Manifest ;
           rdfs:comment "RDFa #{version} tests for #{language}" ;
@@ -77,20 +77,16 @@ module Core
       next unless tc['hostLanguages'].include?(language) && tc['versions'].include?(version)
       ttl << "      <##{tc['num']}>\n"
       test_ttl << %{
-        <##{tc['num']}> a mf:QueryEvaluationTest;
+        <##{tc['num']}> a rdfatest:#{tc['expectedResults'] ? 'Positive' : 'Negative'}EvaluationTest;
           mf:name """Test #{tc['num']}: #{tesc(tc['description'])}""";
           rdfs:comment """#{tesc(tc['purpose'])}""";
           test:classification <#{tc['classification']}>;
-          mf:action [ a qt:QueryTest;
-            qt:queryForm qt:QueryAsk;
-            qt:query <#{get_test_url(version, language, tc['num'], 'sparql')}>;
+          mf:action <#{get_test_url(version, language, tc['num'])}>;
+          mf:result <#{get_test_url(version, language, tc['num'], 'ttl')}>;
         }.gsub(/^        /, '')
-        test_ttl << %{    qt:queryParam "#{tc['queryParam']}";\n} unless tc['queryParam'].to_s.empty?
-        test_ttl << %{    qt:data <#{get_test_url(version, language, tc['num'])}>
-          ];
-        }.gsub(/^        /, '')
+      test_ttl << %{  rdftest:queryParam "#{tc['queryParam']}";\n} unless tc['queryParam'].to_s.empty?
       test_ttl << %{  test:specificationReference """#{tesc(tc['reference'])}""";\n} unless tc['reference'].empty?
-      test_ttl << %{  mf:result #{tc['expectedResults']} .\n}
+      test_ttl << %{  .\n}
     end
 
     # Output manifest definition, ordered tests and test definitions
