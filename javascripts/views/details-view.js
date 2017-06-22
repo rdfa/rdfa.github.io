@@ -17,14 +17,10 @@ var DetailsView = Backbone.View.extend({
 
   render: function () {
     var that = this;
-    if (this.model.error) {
-      this.$el.text(this.model.error);
-    } else {
-      this.$el.html(this.template(this.model)).alert();
-      this.$(".docUrl a").attr('href', this.model.docUrl);
-      this.$(".extractedUrl a").attr('href', this.model.extractedUrl);
-      this.$(".sparqlUrl a").attr('href', this.model.sparqlUrl);
-    }
+    this.$el.html(this.template(this.model)).alert();
+    this.$(".docUrl a").attr('href', this.model.docUrl);
+    this.$(".extractedUrl a").attr('href', this.model.extractedUrl);
+    this.$(".sparqlUrl a").attr('href', this.model.sparqlUrl);
     return this;
   }
 });

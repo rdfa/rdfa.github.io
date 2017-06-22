@@ -1,11 +1,12 @@
+/*global Backbone, $, $rdf */
 // Test model, ID is combination of version, hostLanguage and num
 window.Test = Backbone.Model.extend({
   // Calls back with retrieved source
   source: function (cb) {
     var entries = [];
     var hostLanguages = this.get('hostLanguages');
-    var versions = this.get('versions')
-    var num = this.get('num')
+    var versions = this.get('versions');
+    var num = this.get('num');
 
     versions.forEach(function (version) {
       hostLanguages.forEach(function (lang) {
@@ -17,8 +18,10 @@ window.Test = Backbone.Model.extend({
           svg:    "svg",
           xml:    "xml"
         }[lang];
+
+        if (version === 'rdfa1.0' && ['html5', 'xhtml5'].includes(lang)) {
         // RDFa 1.0 not defined for HTML5
-        if (version !== 'rdfa1.0' || !['html5', 'xhtml5'].includes(lang)) {
+        } else {
           entries.push({
             num: num,
             doc_uri: "test-cases/" + version + "/" + lang + "/" + num + "." + suffix,
@@ -32,7 +35,7 @@ window.Test = Backbone.Model.extend({
   // A URL to the test server
   url: function (path) {
     var u = location.protocol + "//" + location.hostname;
-    if (!["80", "443"].includes(location.port)) { u += ":" + location.port};
+    if (!["80", "443"].includes(location.port)) { u += ":" + location.port;}
     return (u + path);
   },
 
@@ -89,75 +92,80 @@ window.Test = Backbone.Model.extend({
       num:          this.get('num'),
       purpose:      this.get('purpose'),
       docUrl:       testUrl,
+      referenceText:"unloaded",
+      docText:      "unloaded",
       extractedUrl: extractedUrl,
-      sparqlUrl:    sparqlUrl
+      extractedText:"unloaded",
+      sparqlUrl:    sparqlUrl,
+      sparqlText:   "unloaded"
     };
 
-    $.ajax({url: testUrl, dataType: 'text'}).then(function(docText, docStatus) {
+    $.ajax({
+      url: testUrl,
+      dataType: 'text'
+     }).then(function(docText) {
        res.docText = docText;
-       return $.ajax(referenceUrl);
-     }).then(function(referenceText, referenceStatus) {
+       return $.ajax({url: referenceUrl, dataType: 'text'});
+     }).then(function(referenceText) {
        res.referenceText = referenceText;
-       return $.ajax(extractedUrl);
-     }).then(function(extractedText, extractedStatus) {
-       res.extractedText = extractedText;
-       return $.ajax(sparqlUrl);
-     }).then(function(sparqlText, sparqlStatus) {
+       return $.ajax({url: sparqlUrl, dataType: 'text'});
+     }).then(function(sparqlText) {
        res.sparqlText = sparqlText;
+       return $.ajax({url: extractedUrl, dataType: 'text'});
+     }).then(function(extractedText) {
+       res.extractedText = extractedText;
        cb(res);
-     });
+     }).fail(function (xhr) {
+       // Indicate fail and style
+       res.extractedText = "Failed to load: " + xhr.status + ' ' + xhr.statusText;
+       cb(res);
+    });
   },
 
   // Run the test, causes this.result to be set
   run: function () {
-    var that = this;
-    var kb = $rdf.graph();
-    var fetch = $rdf.fetcher(kb);
-    var sparqlUrl = this.sparqlUrl();
-    var extractedUrl = this.extractedUrl();
-    var base = this.testURI();
-    var expectedResults = this.get("expectedResults");
+    var that = this,
+        kb = $rdf.graph(),
+        sparqlUrl = this.sparqlUrl(),
+        extractedUrl = this.extractedUrl(),
+        base = this.testURI(),
+        expectedResults = this.get("expectedResults");
 
     this.set("result", "running");
 
     // Fetch SPARQL
-    $.when($.ajax(sparqlUrl), $.ajax(extractedUrl))
-     .done(function (sparqlRes, extractedRes) {
-       var sparqlQuery = sparqlRes[0];
+    $.ajax({url: extractedUrl, dataType: 'text'})
+     .always(function (extractedText, status, xhr) {
+       var ct = xhr.getResponseHeader("content-type");
+       if (xhr.status !== 200) {extractedText = "";}
+       try {
+         $rdf.parse(extractedText, kb, base, ct);
+       } catch (parseErr) {
+         // Indicate fail and style
+         that.set("result", "error");
+         return;
+       }
 
-      // sparqlRes and extractedRes are arguments resolved for the ajax requests, respectively.
-      // Each argument is an array with the following structure: [ data, statusText, jqXHR ]
-      // Parse extractedRes
-      var ct = extractedRes[2].getResponseHeader("content-type");
-      try {
-        $rdf.parse(extractedRes[0], kb, base, ct);
-      } catch (parseErr) {
-        // Indicate fail and style
-        that.set("result", "error");
-        return;
-      }
-
-      // Parse SPARQL
-      var query = $rdf.SPARQLToQuery(sparqlQuery, true, kb);
-      if (query) {
-        var queryResult = expectedResults ? "FAIL" : "PASS";
-        kb.fetcher = null; // disables resource fetching
-        kb.query(query, function (result) {
-          // Result callback
-          // Indicate pass/fail and style
-          queryResult = result == expectedResults ? "PASS" : "FAIL";
-        }, undefined, function (result) {
-          // Done callback
-          console.log("query done");
+       $.ajax({url: sparqlUrl, dataType: 'text'})
+        .then(function(sparqlText) {
+          // Parse SPARQL
+          var query = $rdf.SPARQLToQuery(sparqlText, true, kb);
+          var queryResult = "error";
+          if (query) {
+            queryResult = expectedResults ? "FAIL" : "PASS";
+            kb.fetcher = null; // disables resource fetching
+            kb.query(query, function (result) {
+              // Result callback
+              // Indicate pass/fail and style
+              queryResult = result === expectedResults ? "PASS" : "FAIL";
+            });
+          }
+          // Indicate fail and style
           that.set("result", queryResult);
+        }).fail(function (result) {
+          // Indicate fail and style
+          that.set("result", "error");
         });
-      } else {
-        // Indicate fail and style
-        that.set("result", "error");
-      }
-    }).fail(function (xhr, textStatus) {
-      // Indicate fail and style
-      that.set("result", "error");
     });
   },
   
