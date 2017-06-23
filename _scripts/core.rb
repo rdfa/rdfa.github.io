@@ -6,7 +6,7 @@ module Core
   HTMLRE = Regexp.new('([0-9]{4,4})\.xhtml')
   TCPATHRE = Regexp.compile('\$TCPATH')
   TESTS_PATH = File.expand_path("../../_data/tests", __FILE__)
-  MANIFEST_JSON = File.expand_path("../../data/manifest.jsonld", __FILE__)
+  MANIFEST_JSON = File.expand_path("../../test-suite/manifest.jsonld", __FILE__)
   HOSTNAME = 'rdfa.info'
 
   def url(offset)

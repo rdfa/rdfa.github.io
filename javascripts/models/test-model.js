@@ -209,7 +209,7 @@ window.Test = Backbone.Model.extend({
 window.TestCollection = Backbone.Collection.extend({
   model:  Test,
   
-  url:    '/data/manifest.jsonld',
+  url:    'manifest.jsonld',
   
   initialize:   function(models, options) {
     if (options) {
