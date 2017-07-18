@@ -112,7 +112,7 @@
     $('a[data-toggle=tab]').bind('click', play.tabSelected);
     
     // bind the example buttons to the example callback
-    $('button[class=btn]').bind('click', play.loadExample);
+    $('button.example').bind('click', play.loadExample);
   };
 
   /**
