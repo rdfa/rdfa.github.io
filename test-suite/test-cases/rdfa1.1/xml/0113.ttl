@@ -3,6 +3,4 @@
 
 <http://rdfa.info/test-suite/test-cases/rdfa1.1/xml/0113.xml#a> dc11:title "" .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.1/xml/0113.xml#b> dc11:title """
-  
-""" .
+<http://rdfa.info/test-suite/test-cases/rdfa1.1/xml/0113.xml#b> dc11:title "" .
