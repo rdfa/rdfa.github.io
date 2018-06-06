@@ -2,7 +2,9 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://rdfa.info/test-suite/test-cases/rdfa1.0/xml/0047.xml> foaf:maker <http://www.example.org/#me> .
+[
+   a foaf:Document;
+   foaf:maker <http://www.example.org/#me>
+] .
 
-<http://www.example.org/#me> a foaf:Document;
-   foaf:name "John Doe" .
+<http://www.example.org/#me> foaf:name "John Doe" .

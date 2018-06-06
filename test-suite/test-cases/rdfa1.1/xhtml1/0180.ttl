@@ -1,4 +1,3 @@
-@prefix xhv: <http://www.w3.org/1999/xhtml/vocab#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-<http://example.org/#me> xhv:name "Ivan Herman" .
+<http://example.org/#me> foaf:name "Ivan Herman" .

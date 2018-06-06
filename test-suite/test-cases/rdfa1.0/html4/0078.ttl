@@ -2,7 +2,8 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://www.example.org/#somebody> foaf:knows [
-     foaf:mailbox <mailto:ivan@w3.org>;
-     foaf:name "Ivan Herman",  [ a foaf:Person]
-   ] .
+<http://www.example.org/#somebody> foaf:knows
+   [ foaf:name "Ivan Herman";
+     foaf:mailbox <mailto:ivan@w3.org> ],
+  [ a foaf:Person;
+    foaf:name "Mark Birbeck" ] .
