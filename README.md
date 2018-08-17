@@ -206,10 +206,10 @@ If you would like to contribute a to the website, include an additional
 test suite processor endpoint, contribute a new test or to a fix to an existing test,
 please follow these steps:
 
-1. Notify the RDFa mailing list, public-rdf-wg@w3.org, 
+1. Notify the RDFa mailing list, public-rdfa@w3.org ([archives](https://lists.w3.org/Archives/Public/public-rdfa/)),
    that you will be creating a new test or fix and the purpose of the
    change.
-2. Clone the git repository: [git://github.com/rdfa/rdfa-website.git](https://github.com/rdfa/rdfa-website).
+2. Clone the git repository: [git://github.com/rdfa/rdfa.github.io.git](https://github.com/rdfa/rdfa.github.io).
 3. Make your changes and submit them via github, or via a 'git format-patch'
    to the RDFa mailing list.
 
