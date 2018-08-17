@@ -27,7 +27,7 @@ The test-suite is implemented using [JavaScript](https://en.wikipedia.org/wiki/J
 The user interface is implemented in JavaScript using
 [Bootstrap.js][] and [Backbone.js][].
 
-The test files are managed statically using [Jekyll](https://jekyllrb.com) with a [Rake task](https://en.wikipedia.org/wiki/Rake_(software)) used to build version- and language-specific test files.
+The test files are managed statically using [Jekyll][] with a [Rake task](https://en.wikipedia.org/wiki/Rake_(software)) used to build version- and language-specific test files.
 
 The HTML application is implemented principally in JavaScript using [Backbone.js][] as a model-viewer-controller, which downloads the test suite manifest and creates a simple user interface using [Bootstrap.js][] to run tests, or get test details.
 
@@ -226,7 +226,22 @@ requires that the assets be re-compiled. This can be done as follows:
 
 Make sure to do this before committing changes that involve any CSS or JavaScript contained within `file:public/stylesheets` or `public/javascripts`.
 
+# rdfa.info Web Site
+
+The site is built with [Jekyll][] and [Bootstrap][] 3.0. To develop the site
+locally, you will also need [Ruby][] and [Bundler][] installed.
+
+To setup the site (after the dependencies are in place), run the following:
+```sh
+$ bundle install
+$ bundle exec jeckyll serve
+$ # visit http://localhost:4000/ to test
+```
+
 [N-Triples]:    http://www.w3.org/TR/n-triples/
 [Turtle]:       http://www.w3.org/TR/2012/WD-turtle-20120710/
 [Backbone.js]:  http://documentcloud.github.com/backbone/
-[Bootstrap.js]: http://twitter.github.com/bootstrap/
+[Bootstrap.js]: https://getbootstrap.com/docs/3.3/
+[Jekyll]:       https://jekyllrb.com/
+[Ruby]:         https://www.ruby-lang.org/
+[Bundler]:      https://bundler.io/
