@@ -240,12 +240,18 @@ $ # visit http://localhost:4000/ to test
 
 # License
 
-Unless otherwise noted, all content in this source repository is released under
-a public domain dedication. This includes all HTML, CSS, and JavaScript,
-including all source code and testing files associated with the RDFa Test
-Suite. At this point in time, the only exception to the public domain
-dedication are the icons used on the site, which are copyright by Glyphicons
-and are released under the CC-BY-SA-3.0 license.
+Per-W3C Policy, the RDFa Test Suite is covered by the dual-licensing approach
+([BSD-3-Clause](https://spdx.org/licenses/BSD-3-Clause) & W3C Test Suite License) described in
+[Licenses for W3C Test Suites](https://www.w3.org/Consortium/Legal/2008/04-testsuite-copyright.html).
+
+All other content in this source repository, unless otherwise noted, is released under
+a public domain dedication. This includes all HTML, CSS, and JavaScript used
+within the Web site.
+
+At this point in time, the only exception to the public domain
+dedication are the icons used on the site, which are copyright by [Glyphicons](https://glyphicons.com/)
+and are released under the [CC-BY-SA-3.0](https://creativecommons.org/licenses/by-sa/3.0/) license.
+
 
 [N-Triples]:    http://www.w3.org/TR/n-triples/
 [Turtle]:       http://www.w3.org/TR/2012/WD-turtle-20120710/
