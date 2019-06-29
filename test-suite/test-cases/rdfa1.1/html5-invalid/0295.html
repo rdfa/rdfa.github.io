@@ -450,11 +450,11 @@ resource="[_:b]">knows</span>
          <p about="">This is <span property="dc:title">Test 0109</span>.</p>
       </div>
     <div rel="xhv:next">
-      <div rel="xhv:next" />
+      <img rel="xhv:next" />
     </div>
     <div rel="xhv:next">
       <div rel="xhv:next">
-        <div rel="xhv:next" />
+        <img rel="xhv:next" />
       </div>
     </div>
   	  <p>
@@ -506,14 +506,14 @@ whitespace     preserved
 	         is the default prefix for XHTML+RDFa 1.0.
 	      </p>
     <div>
-	<p about="http://example.org/">
+	<div about="http://example.org/">
 		<span about="[]" property="dc:title">Test Case 0121</span>
 		checks to make sure RDFa processors resolve the empty CURIE correctly.
 		<p resource="[]">
 			<span property="dc:contributor">Shane McCarron</span>
 			contributed to this test.
 		</p>
-	</p>
+	</div>
 	</div>
     <p about="http://example.org/section1.html">
          This section is contained below <span rel="up" resource="[]">the main site</span>.
@@ -842,7 +842,7 @@ an XMLLiteral</p>
     Non matching lexical value with language.
   </time>
   <data property="rdf:value" lang="lat" value="veni, vidi, vici" content="I came, I saw, I conquered">
-    @value overrides @content in the 'data' element.
+    @value does not override @content in the 'data' element.
   </data>
   <time property="rdf:value" datetime="2012-03-18T00:00:00-08:00">18 March 2012 at midnight in San Francisco</time>
   <object property="rdf:value" data="http://example.com/"></object>
