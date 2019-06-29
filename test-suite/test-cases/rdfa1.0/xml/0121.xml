@@ -5,14 +5,14 @@
    </head>
    <body>
     <div>
-	<p about="http://example.org/">
+	<div about="http://example.org/">
 		<span about="[]" property="dc:title">Test Case 0121</span>
 		checks to make sure RDFa processors resolve the empty CURIE correctly.
 		<p resource="[]">
 			<span property="dc:contributor">Shane McCarron</span>
 			contributed to this test.
 		</p>
-	</p>
+	</div>
 	</div>
    </body>
 
