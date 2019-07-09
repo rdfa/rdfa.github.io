@@ -21,7 +21,7 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/xml/0235.xml>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/xml/0235.ttl>;
-  rdftest:queryParam "rdfagraph=processor";
+  rdfatest:queryParam "rdfagraph=processor";
   .
 
 <#0236> a rdfatest:PositiveEvaluationTest;
@@ -30,7 +30,7 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/xml/0236.xml>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/xml/0236.ttl>;
-  rdftest:queryParam "rdfagraph=processor";
+  rdfatest:queryParam "rdfagraph=processor";
   test:specificationReference """7.6 Processor Status""";
   .
 
@@ -43,7 +43,7 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/xml/0237.xml>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/xml/0237.ttl>;
-  rdftest:queryParam "rdfagraph=processor";
+  rdfatest:queryParam "rdfagraph=processor";
   test:specificationReference """7.6 Processor Status and 7.4.2 General Use of CURIEs in Attributes""";
   .
 
@@ -56,7 +56,7 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/xml/0238.xml>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/xml/0238.ttl>;
-  rdftest:queryParam "rdfagraph=processor";
+  rdfatest:queryParam "rdfagraph=processor";
   test:specificationReference """7.6 Processor Status and 7.4.3 General Use of Terms in Attributes""";
   .
 
@@ -69,6 +69,6 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/xml/0239.xml>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-proc/xml/0239.ttl>;
-  rdftest:queryParam "rdfagraph=processor";
+  rdfatest:queryParam "rdfagraph=processor";
   test:specificationReference """7.6 Processor Status and 7.4.2 General Use of CURIEs in Attributes""";
   .

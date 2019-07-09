@@ -25,7 +25,7 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/svg/0240.svg>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/svg/0240.ttl>;
-  rdftest:queryParam "vocab_expansion=true";
+  rdfatest:queryParam "vocab_expansion=true";
   test:specificationReference """10.1.1 RDFa Vocabulary Entailment""";
   .
 
@@ -38,7 +38,7 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/svg/0241.svg>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/svg/0241.ttl>;
-  rdftest:queryParam "vocab_expansion=true";
+  rdfatest:queryParam "vocab_expansion=true";
   test:specificationReference """10.1.1 RDFa Vocabulary Entailment""";
   .
 
@@ -51,7 +51,7 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/svg/0242.svg>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/svg/0242.ttl>;
-  rdftest:queryParam "vocab_expansion=true";
+  rdfatest:queryParam "vocab_expansion=true";
   test:specificationReference """10.1.1 RDFa Vocabulary Entailment""";
   .
 
@@ -64,7 +64,7 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/svg/0243.svg>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/svg/0243.ttl>;
-  rdftest:queryParam "vocab_expansion=true";
+  rdfatest:queryParam "vocab_expansion=true";
   test:specificationReference """10.1.1 RDFa Vocabulary Entailment""";
   .
 
@@ -77,7 +77,7 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/svg/0244.svg>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/svg/0244.ttl>;
-  rdftest:queryParam "vocab_expansion=true";
+  rdfatest:queryParam "vocab_expansion=true";
   test:specificationReference """10.1.1 RDFa Vocabulary Entailment""";
   .
 
@@ -90,6 +90,6 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/svg/0245.svg>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-vocab/svg/0245.ttl>;
-  rdftest:queryParam "vocab_expansion=true";
+  rdfatest:queryParam "vocab_expansion=true";
   test:specificationReference """10.1.1 RDFa Vocabulary Entailment""";
   .

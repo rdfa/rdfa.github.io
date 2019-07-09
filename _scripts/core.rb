@@ -84,7 +84,7 @@ module Core
           mf:action <#{get_test_url(version, language, tc['num'])}>;
           mf:result <#{get_test_url(version, language, tc['num'], 'ttl')}>;
         }.gsub(/^        /, '')
-      test_ttl << %{  rdftest:queryParam "#{tc['queryParam']}";\n} unless tc['queryParam'].to_s.empty?
+      test_ttl << %{  rdfatest:queryParam "#{tc['queryParam']}";\n} unless tc['queryParam'].to_s.empty?
       test_ttl << %{  test:specificationReference """#{tesc(tc['reference'])}""";\n} unless tc['reference'].empty?
       test_ttl << %{  .\n}
     end

@@ -226,7 +226,7 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-lite/xhtml5/0235.xhtml>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-lite/xhtml5/0235.ttl>;
-  rdftest:queryParam "rdfagraph=processor";
+  rdfatest:queryParam "rdfagraph=processor";
   .
 
 <#0238> a rdfatest:PositiveEvaluationTest;
@@ -238,7 +238,7 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-lite/xhtml5/0238.xhtml>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-lite/xhtml5/0238.ttl>;
-  rdftest:queryParam "rdfagraph=processor";
+  rdfatest:queryParam "rdfagraph=processor";
   test:specificationReference """7.6 Processor Status and 7.4.3 General Use of Terms in Attributes""";
   .
 
@@ -251,7 +251,7 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-lite/xhtml5/0239.xhtml>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-lite/xhtml5/0239.ttl>;
-  rdftest:queryParam "rdfagraph=processor";
+  rdfatest:queryParam "rdfagraph=processor";
   test:specificationReference """7.6 Processor Status and 7.4.2 General Use of CURIEs in Attributes""";
   .
 
@@ -264,7 +264,7 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-lite/xhtml5/0240.xhtml>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-lite/xhtml5/0240.ttl>;
-  rdftest:queryParam "vocab_expansion=true";
+  rdfatest:queryParam "vocab_expansion=true";
   test:specificationReference """10.1.1 RDFa Vocabulary Entailment""";
   .
 
@@ -277,7 +277,7 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-lite/xhtml5/0241.xhtml>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-lite/xhtml5/0241.ttl>;
-  rdftest:queryParam "vocab_expansion=true";
+  rdfatest:queryParam "vocab_expansion=true";
   test:specificationReference """10.1.1 RDFa Vocabulary Entailment""";
   .
 
@@ -290,7 +290,7 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-lite/xhtml5/0242.xhtml>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-lite/xhtml5/0242.ttl>;
-  rdftest:queryParam "vocab_expansion=true";
+  rdfatest:queryParam "vocab_expansion=true";
   test:specificationReference """10.1.1 RDFa Vocabulary Entailment""";
   .
 
@@ -505,7 +505,7 @@
   test:classification <http://www.w3.org/2006/03/test-description#required>;
   mf:action <http://rdfa.info/test-suite/test-cases/rdfa1.1-lite/xhtml5/0313.xhtml>;
   mf:result <http://rdfa.info/test-suite/test-cases/rdfa1.1-lite/xhtml5/0313.ttl>;
-  rdftest:queryParam "rdfagraph=processor";
+  rdfatest:queryParam "rdfagraph=processor";
   .
 
 <#0319> a rdfatest:PositiveEvaluationTest;
