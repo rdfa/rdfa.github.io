@@ -1,7 +1,23 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix earl: <http://www.w3.org/ns/earl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://semarglproject.org> a doap:Project;
+  doap:name "Semargl";
+  doap:developer [
+    a doap:Developer;
+    foaf:name "Peter Ansell"
+  ];
+  doap:homepage <https://github.com/semarglproject/semargl>;
+  doap:description """
+    Highly performant, lightweight framework for linked data processing.
+    Supports RDFa, JSON-LD, RDF/XML and plain text formats,
+    runs on Android and GAE,
+    provides integration with Jena, Sesame and Clerezza.
+  """@en;
+  doap:programming-language "Java" .
 
 <http://rdfa.info/test-suite/> a earl:Software, doap:Project;
   doap:homepage <http://rdfa.info/>;

@@ -1,3 +1,30 @@
+@base <http://www.w3.org/2012/pyRdfa> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.w3.org/2012/pyRdfa> a doap:Project;
+  doap:created "2012-05-24";
+  doap:description "pyRdfa is a distiller that generates RDF triples from an XML or HTML5 file annotated by RDFa in various RDF serialization formats. It can either be used directly from a command line or via a CGI service.";
+  doap:developer <http://www.ivan-herman.net/foaf#me>;
+  doap:file-release <https://github.com/RDFLib/pyrdfa3>;
+  doap:license <http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231>;
+  doap:maintainer <http://www.ivan-herman.net/foaf#me>;
+  doap:name "pyRdfa";
+  doap:programming-language "Python";
+  doap:repository <https://github.com/RDFLib/pyrdfa3>;
+  doap:repository-location <https://github.com/RDFLib/pyrdfa3>;
+  rdfs:comment "RDFa 1.1 is a specification for attributes to be used with XML languages or with HTML5 to express structured data. The rendered, hypertext data of XML or HTML is reused by the RDFa markup, so that publishers don’t need to repeat significant data in the document content. The underlying abstract representation is RDF, which lets publishers build their own vocabulary, extend others, and evolve their vocabulary with maximal interoperability over time. pyRdfa is a distiller that generates RDF triples from an XML or HTML5 file annotated by RDFa in various RDF serialization formats. It can either be used directly from a command line or via a CGI service. It corresponds to the RDFa 1.1 Core document, XHTML+RDFa, and HTML+RDFa specifications, as well as to the SVG Tiny 1.2 Recommendation for the SVG version.";
+  rdfs:seeAlso <http://www.w3.org/TR/rdfa-core/> .
+
+<http://www.ivan-herman.net/foaf#me> a foaf:Person;
+  foaf:name """Ivan
+            Herman""" .
+
+<https://github.com/RDFLib/pyrdfa3> a doap:Repository .
+
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix earl: <http://www.w3.org/ns/earl#> .
