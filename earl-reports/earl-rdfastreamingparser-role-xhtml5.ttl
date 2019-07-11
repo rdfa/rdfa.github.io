@@ -1,0 +1,78 @@
+@prefix dc: <http://purl.org/dc/terms/>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+@prefix earl: <http://www.w3.org/ns/earl#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix mf: <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdft: <http://www.w3.org/ns/rdftest#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+<> foaf:primaryTopic <https://www.npmjs.com/package/rdfa-streaming-parser/>;
+    dc:issued "2019-07-08T15:08:20.583Z"^^xsd:dateTime;
+    foaf:maker <https://www.rubensworks.net/#me>.
+<https://www.npmjs.com/package/rdfa-streaming-parser/> a earl:Software, earl:TestSubject, doap:Project;
+    doap:name "rdfa-streaming-parser";
+    dc:title "rdfa-streaming-parser";
+    doap:homepage <https://github.com/rubensworks/rdfa-streaming-parser.js#readme>;
+    doap:license <http://opensource.org/licenses/MIT>;
+    doap:programming-language "JavaScript";
+    doap:implements <https://www.w3.org/TR/rdfa-core/>, <https://www.w3.org/TR/rdfa-in-html/>, <https://www.w3.org/TR/xhtml-rdfa/>, <https://www.w3.org/TR/2008/REC-SVGTiny12-20081222/metadata.html#MetadataAttributes>;
+    doap:category <http://dbpedia.org/resource/Resource_Description_Framework>;
+    doap:download-page <https://npmjs.org/package/rdfa-streaming-parser>;
+    doap:bug-database <https://github.com/rubensworks/rdfa-streaming-parser.js/issues>;
+    doap:developer <https://www.rubensworks.net/#me>;
+    doap:maintainer <https://www.rubensworks.net/#me>;
+    doap:documenter <https://www.rubensworks.net/#me>;
+    doap:maker <https://www.rubensworks.net/#me>;
+    dc:creator <https://www.rubensworks.net/#me>;
+    dc:description "Streaming RDFa parser"@en;
+    doap:description "Streaming RDFa parser"@en.
+<https://www.rubensworks.net/#me> a foaf:Person, earl:Assertor;
+    foaf:name "Ruben Taelman <rubensworks@gmail.com>";
+    foaf:homepage <https://www.rubensworks.net/>.
+<http://rdfa.info/test-suite/test-cases/rdfa1.1-role/xhtml5/manifest#0305> a earl:TestCriterion, earl:TestCase;
+    dc:title "Test 0305: role attribute with explicit id and term";
+    dc:description "When role is specified along with an id the appropriate triple is created.";
+    earl:assertions _:assertions0.
+_:assertions0 rdf:first _:assertion0;
+    rdf:rest rdf:nil.
+_:assertion0 a earl:Assertion;
+    earl:assertedBy <https://www.rubensworks.net/#me>;
+    earl:test <http://rdfa.info/test-suite/test-cases/rdfa1.1-role/xhtml5/manifest#0305>;
+    earl:subject <https://www.npmjs.com/package/rdfa-streaming-parser/>;
+    earl:mode earl:automatic;
+    earl:result _:result0.
+_:result0 a earl:TestResult;
+    earl:outcome earl:passed;
+    dc:date "2019-07-08T15:08:20.583Z"^^xsd:dateTime.
+<http://rdfa.info/test-suite/test-cases/rdfa1.1-role/xhtml5/manifest#0306> a earl:TestCriterion, earl:TestCase;
+    dc:title "Test 0306: role attribute with explicit base id and term";
+    dc:description "When role is specified along with an id the appropriate triple is created.";
+    earl:assertions _:assertions1.
+_:assertions1 rdf:first _:assertion1;
+    rdf:rest rdf:nil.
+_:assertion1 a earl:Assertion;
+    earl:assertedBy <https://www.rubensworks.net/#me>;
+    earl:test <http://rdfa.info/test-suite/test-cases/rdfa1.1-role/xhtml5/manifest#0306>;
+    earl:subject <https://www.npmjs.com/package/rdfa-streaming-parser/>;
+    earl:mode earl:automatic;
+    earl:result _:result1.
+_:result1 a earl:TestResult;
+    earl:outcome earl:passed;
+    dc:date "2019-07-08T15:08:20.583Z"^^xsd:dateTime.
+<http://rdfa.info/test-suite/test-cases/rdfa1.1-role/xhtml5/manifest#0307> a earl:TestCriterion, earl:TestCase;
+    dc:title "Test 0307: role attribute with term and no id";
+    dc:description "When role is specified along with an id the appropriate triple is created.";
+    earl:assertions _:assertions2.
+_:assertions2 rdf:first _:assertion2;
+    rdf:rest rdf:nil.
+_:assertion2 a earl:Assertion;
+    earl:assertedBy <https://www.rubensworks.net/#me>;
+    earl:test <http://rdfa.info/test-suite/test-cases/rdfa1.1-role/xhtml5/manifest#0307>;
+    earl:subject <https://www.npmjs.com/package/rdfa-streaming-parser/>;
+    earl:mode earl:automatic;
+    earl:result _:result2.
+_:result2 a earl:TestResult;
+    earl:outcome earl:passed;
+    dc:date "2019-07-08T15:08:20.583Z"^^xsd:dateTime.
