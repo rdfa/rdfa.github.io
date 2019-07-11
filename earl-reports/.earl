@@ -2,6 +2,7 @@
 :manifest:
 - ../test-suite/test-cases/rdfa1.1-proc/html5/manifest.ttl
 - ../test-suite/test-cases/rdfa1.1-vocab/html5/manifest.ttl
+- ../test-suite/test-cases/rdfa1.1-role/html5/manifest.ttl
 - ../test-suite/test-cases/rdfa1.1/html4/manifest.ttl
 - ../test-suite/test-cases/rdfa1.1/html5/manifest.ttl
 - ../test-suite/test-cases/rdfa1.1/xhtml1/manifest.ttl
